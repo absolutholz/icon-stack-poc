@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon_myeshop/schnellerfassung</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon_myeshop/schnellerfassung" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(9.000000, 13.000000)" fill="#818181">
+            <rect id="Rectangle" x="0" y="0" width="2" height="8"/>
+            <rect id="Rectangle-Copy" x="0" y="14" width="2" height="8"/>
+            <rect id="Rectangle-Copy-14" x="10" y="0" width="2" height="8"/>
+            <rect id="Rectangle-Copy-17" x="10" y="14" width="2" height="8"/>
+            <rect id="Rectangle-Copy-15" x="14" y="0" width="2" height="8"/>
+            <rect id="Rectangle-Copy-20" x="14" y="14" width="2" height="8"/>
+            <rect id="Rectangle-Copy-18" x="24" y="0" width="2" height="8"/>
+            <rect id="Rectangle-Copy-21" x="24" y="14" width="2" height="8"/>
+            <rect id="Rectangle-Copy-19" x="28" y="0" width="2" height="8"/>
+            <rect id="Rectangle-Copy-22" x="28" y="14" width="2" height="8"/>
+            <rect id="Rectangle-Copy-13" x="4" y="0" width="4" height="8"/>
+            <rect id="Rectangle-Copy-23" x="4" y="14" width="4" height="8"/>
+            <rect id="Rectangle-Copy-16" x="18" y="0" width="4" height="8"/>
+            <rect id="Rectangle-Copy-24" x="18" y="14" width="4" height="8"/>
+        </g>
+        <path d="M43.75,15.5 C43.336,15.5 43,15.164 43,14.75 L43,9.75 C43,8.509 41.99,7.5 40.75,7.5 L35.75,7.5 C35.336,7.5 35,7.164 35,6.75 C35,6.336 35.336,6 35.75,6 L40.75,6 C42.817,6 44.5,7.682 44.5,9.75 L44.5,14.75 C44.5,15.164 44.164,15.5 43.75,15.5" id="Fill-1" fill="#FF7000"/>
+        <path d="M3.75,15.5 C3.336,15.5 3,15.164 3,14.75 L3,9.75 C3,7.682 4.682,6 6.75,6 L11.75,6 C12.164,6 12.5,6.336 12.5,6.75 C12.5,7.164 12.164,7.5 11.75,7.5 L6.75,7.5 C5.509,7.5 4.5,8.509 4.5,9.75 L4.5,14.75 C4.5,15.164 4.164,15.5 3.75,15.5" id="Fill-3" fill="#FF7000"/>
+        <path d="M11.75,41.5 L6.75,41.5 C4.682,41.5 3,39.817 3,37.75 L3,32.75 C3,32.336 3.336,32 3.75,32 C4.164,32 4.5,32.336 4.5,32.75 L4.5,37.75 C4.5,38.99 5.509,40 6.75,40 L11.75,40 C12.164,40 12.5,40.336 12.5,40.75 C12.5,41.164 12.164,41.5 11.75,41.5" id="Fill-5" fill="#FF7000"/>
+        <path d="M40.75,41.5 L35.75,41.5 C35.336,41.5 35,41.164 35,40.75 C35,40.336 35.336,40 35.75,40 L40.75,40 C41.99,40 43,38.99 43,37.75 L43,32.75 C43,32.336 43.336,32 43.75,32 C44.164,32 44.5,32.336 44.5,32.75 L44.5,37.75 C44.5,39.817 42.817,41.5 40.75,41.5" id="Fill-7" fill="#FF7000"/>
+        <path d="M42.75,24.5 L4.75,24.5 C4.336,24.5 4,24.164 4,23.75 C4,23.336 4.336,23 4.75,23 L42.75,23 C43.164,23 43.5,23.336 43.5,23.75 C43.5,24.164 43.164,24.5 42.75,24.5" id="Fill-9" fill="#FF7000"/>
+    </g>
+</svg>

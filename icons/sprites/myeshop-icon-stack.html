@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-icon_myeshop_artikellisten-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_benutzer-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_bestellungen-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_faq-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_kostenstelle-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_lieferadressen-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_newsletter-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_produktfilter-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_profil-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_sachnummern-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_sammelbestellungen-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_schnellerfassung-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_statistik-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_unternehmenseinstellungen-dims { width: 48px; height: 48px; }
+	.svg-icon_myeshop_zugenehmigen-dims { width: 48px; height: 48px; }
+	.svg-icon_oci_sachnummern-dims { width: 48px; height: 48px; }
+	.svg-icon_offer_list-dims { width: 48px; height: 48px; }
+	.svg-icon_printed_offer_list-dims { width: 48px; height: 48px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+	
+<!--
+	
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_artikellisten" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1" id="aa"/><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1H1z" id="ac"/><path d="M0 2.5v9.999a2.5 2.5 0 105 0V2.5a2.5 2.5 0 00-5 0" id="ae"/><path d="M0 2.5v9.999a2.5 2.5 0 105 0V2.5a2.5 2.5 0 00-5 0" id="ag"/><path d="M2 0a2 2 0 00-2 2v.999A2 2 0 002 5h4a2 2 0 002-2.001V2a2 2 0 00-2-2" id="ai"/><path d="M2 0a2 2 0 00-2 2v.999A2 2 0 002 5h4a2 2 0 002-2.001V2a2 2 0 00-2-2H2z" id="ak"/><path d="M0 0l5.134 7.5h8.761a4 4 0 003.857-2.943L19 0H0z" id="am"/><path d="M0 0l5.134 7.5h8.761a4 4 0 003.857-2.943L19 0H0z" id="ao"/><path d="M0-.001L1 16h6a4 4 0 004-4V-.001H0z" id="aq"/><path d="M0-.001L1 16h6a4 4 0 004-4V-.001H0z" id="as"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 004-4V2a2 2 0 00-2-2" id="au"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 004-4V2a2 2 0 00-2-2H2z" id="aw"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(8 3)"><mask id="ab" fill="#fff"><use xlink:href="#aa"/></mask><path d="M1 0h30a1 1 0 011 1v36a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1" fill="#FFF" mask="url(#ab)"/><mask id="ad" fill="#fff"><use xlink:href="#ac"/></mask><path d="M1.5 36.5h29v-35h-29v35zm29.5 3H1A2.503 2.503 0 01-1.5 37V1C-1.5-.379-.378-1.5 1-1.5h30c1.379 0 2.5 1.121 2.5 2.5v36c0 1.379-1.121 2.5-2.5 2.5z" fill="#FF7000" mask="url(#ad)"/></g><g transform="translate(13 21)"><mask id="af" fill="#fff"><use xlink:href="#ae"/></mask><path d="M2.5 0A2.5 2.5 0 015 2.5v10a2.5 2.5 0 11-5 0v-10A2.5 2.5 0 012.5 0" fill="#FFF" mask="url(#af)"/></g><g transform="translate(13 21)"><mask id="ah" fill="#fff"><use xlink:href="#ag"/></mask><path d="M2.5 1.5c-.551 0-1 .449-1 1v10a1.001 1.001 0 002 0v-10c0-.551-.449-1-1-1m0 15c-2.206 0-4-1.794-4-4v-10c0-2.206 1.794-4 4-4s4 1.794 4 4v10c0 2.206-1.794 4-4 4" fill="#818181" mask="url(#ah)"/></g><g transform="translate(2 17)"><mask id="aj" fill="#fff"><use xlink:href="#ai"/></mask><path d="M8 2v1a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2h4a2 2 0 012 2" fill="#FFF" mask="url(#aj)"/></g><g transform="translate(2 17)"><mask id="al" fill="#fff"><use xlink:href="#ak"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h4a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2zm4 5H2C.07 6.5-1.5 4.93-1.5 3V2C-1.5.07.07-1.5 2-1.5h4C7.93-1.5 9.5.07 9.5 2v1c0 1.93-1.57 3.5-3.5 3.5z" fill="#818181" mask="url(#al)"/></g><path fill="#FFF" d="M6 23h7v-7H6z"/><path d="M6 23h7v-7H6v7zm1.5-1.5h4v-4h-4v4z" fill="#818181"/><g transform="translate(24 23)"><mask id="an" fill="#fff"><use xlink:href="#am"/></mask><path d="M0 0l5.135 7.5h8.76a4 4 0 003.857-2.943L19 0H0z" fill="#FFF" mask="url(#an)"/></g><g transform="translate(24 23)"><mask id="ap" fill="#fff"><use xlink:href="#ao"/></mask><path d="M5.926 6h7.969a2.504 2.504 0 002.41-1.84l.729-2.66H2.844L5.927 6zm7.969 3H4.344l-7.19-10.5h23.812l-1.768 6.453A5.51 5.51 0 0113.895 9z" fill="#818181" mask="url(#ap)"/></g><path d="M31.5 32.75H29A5.757 5.757 0 0123.25 27v-3h1.5v3A4.255 4.255 0 0029 31.25h2.5v1.5z" fill="#818181"/><g><g transform="translate(29 29)"><mask id="ar" fill="#fff"><use xlink:href="#aq"/></mask><path d="M0 0h11v12a4 4 0 01-4 4H1L0 0z" fill="#FFF" mask="url(#ar)"/></g><g transform="translate(29 29)"><mask id="at" fill="#fff"><use xlink:href="#as"/></mask><path d="M2.41 14.5H7c1.38 0 2.5-1.121 2.5-2.5V1.5H1.597l.812 13zm4.59 3H-.409l-1.188-19H12.5V12c0 3.032-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#at)"/></g></g><g><g transform="translate(11 14)"><mask id="av" fill="#fff"><use xlink:href="#au"/></mask><path d="M2 0h31a2 2 0 012 2v5a4 4 0 01-4 4H2a2 2 0 01-2-2V2a2 2 0 012-2" fill="#FFF" mask="url(#av)"/></g><g transform="translate(11 14)"><mask id="ax" fill="#fff"><use xlink:href="#aw"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v7a.5.5 0 00.5.5h29c1.379 0 2.5-1.122 2.5-2.5V2a.5.5 0 00-.5-.5H2zm29 11H2c-1.93 0-3.5-1.57-3.5-3.5V2C-1.5.07.07-1.5 2-1.5h31c1.93 0 3.5 1.57 3.5 3.5v5c0 3.033-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#ax)"/></g></g><g fill="#FF7000"><path d="M35 10.25H18a.75.75 0 010-1.5h17a.75.75 0 010 1.5M15 10.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_benutzer" xmlns="http://www.w3.org/2000/svg"><defs><path d="M3.686 1.309a3.005 3.005 0 00-2.118 2.445L.671 9.913a3 3 0 002.437 3.385l3.394.612c4.134.743 8.368.743 12.5 0l3.475-.627a3 3 0 002.47-2.933c0-.121-.006-.243-.021-.366l-.715-6.131a3 3 0 00-2.165-2.54C18.946.437 15.848 0 12.752 0 9.661 0 6.639.436 3.686 1.309" id="ba"/><path d="M3.686 1.309a3.005 3.005 0 00-2.118 2.445L.671 9.913a2.999 2.999 0 002.437 3.385l3.394.612c4.134.743 8.368.743 12.5 0l3.475-.627a2.998 2.998 0 002.449-3.299l-.715-6.131a3 3 0 00-2.165-2.54C18.946.437 15.848 0 12.752 0 9.661 0 6.639.436 3.686 1.309" id="bc"/><path d="M0 5.793v2.528a5.793 5.793 0 005.793 5.792 5.792 5.792 0 005.792-5.792V5.793A5.793 5.793 0 100 5.793" id="be"/><path d="M0 5.793v2.528a5.793 5.793 0 005.793 5.792 5.792 5.792 0 005.792-5.792V5.793A5.793 5.793 0 100 5.793" id="bg"/><path d="M3.686 1.309a3 3 0 00-2.117 2.445L.671 9.913a3.002 3.002 0 002.437 3.385l3.395.612c4.132.743 8.366.743 12.5 0l3.475-.627a2.997 2.997 0 002.468-2.933c0-.121-.006-.243-.02-.366l-.715-6.131a2.998 2.998 0 00-2.165-2.54C18.945.437 15.847 0 12.752 0c-3.09 0-6.113.436-9.066 1.309" id="bi"/><path d="M3.686 1.309a3 3 0 00-2.117 2.445L.671 9.913a3 3 0 002.437 3.385l3.395.612c4.132.743 8.366.743 12.5 0l3.475-.627a3 3 0 002.448-3.299l-.715-6.131a2.998 2.998 0 00-2.165-2.54C18.945.437 15.847 0 12.752 0c-3.09 0-6.113.436-9.066 1.309" id="bk"/><path d="M0 5.793v2.528a5.792 5.792 0 005.793 5.792 5.792 5.792 0 005.792-5.792V5.793A5.792 5.792 0 100 5.793" id="bm"/><path d="M0 5.793v2.528a5.792 5.792 0 005.793 5.792 5.792 5.792 0 005.792-5.792V5.793A5.792 5.792 0 100 5.793" id="bo"/><path d="M5.206 1.779a5 5 0 00-3.6 4.077l-1.163 7.79a5.001 5.001 0 004.08 5.663l5.049.887a50.028 50.028 0 0017.303 0l5.187-.912a5.002 5.002 0 004.136-4.904c.001-.202-.011-.407-.035-.613l-.927-7.745a4.995 4.995 0 00-3.673-4.237C27.112.595 22.666 0 18.223 0 13.788 0 9.449.593 5.206 1.779" id="bq"/><path d="M5.206 1.779a5 5 0 00-3.6 4.077l-1.163 7.79a5 5 0 004.08 5.663l5.049.887a50.028 50.028 0 0017.303 0l5.187-.912a5.001 5.001 0 004.101-5.517l-.927-7.745a4.995 4.995 0 00-3.673-4.237C27.112.595 22.666 0 18.223 0 13.788 0 9.449.593 5.206 1.779z" id="bs"/><path d="M8.72 0a8 8 0 00-8 8v4.386a8 8 0 008 8.001h1.145a8 8 0 008.001-8.001V8a8 8 0 00-8.001-8" id="bu"/><path d="M8.72 0a8 8 0 00-8 8v4.386a8 8 0 008 8.001h1.145a8 8 0 008.001-8.001V8a8 8 0 00-8.001-8H8.72z" id="bw"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(22 14)"><mask id="bb" fill="#fff"><use xlink:href="#ba"/></mask><path d="M.67 9.913l.898-6.16A3 3 0 013.687 1.31 31.802 31.802 0 0112.752 0c3.096 0 6.193.438 9.294 1.313a3 3 0 012.165 2.54l.715 6.13a3 3 0 01-2.448 3.3l-3.476.627a35.328 35.328 0 01-12.5 0l-3.394-.612A3 3 0 01.67 9.913" fill="#FFF" mask="url(#bb)"/></g><g transform="translate(22 14)"><mask id="bd" fill="#fff"><use xlink:href="#bc"/></mask><path d="M12.752 1.5c-2.932 0-5.839.42-8.64 1.249A1.504 1.504 0 003.053 3.97l-.898 6.158a1.495 1.495 0 001.219 1.693l3.394.61c3.97.716 7.998.716 11.968 0l3.476-.625a1.502 1.502 0 001.224-1.65l-.715-6.13a1.495 1.495 0 00-1.082-1.27A32.735 32.735 0 0012.752 1.5m0 14.469c-2.177 0-4.354-.194-6.516-.583l-3.394-.611A4.483 4.483 0 01-.813 9.697l.897-6.16A4.513 4.513 0 013.261-.127C9.414-1.948 16.014-1.95 22.453-.13a4.486 4.486 0 013.248 3.809l.715 6.13a4.508 4.508 0 01-3.673 4.95l-3.475.627a36.766 36.766 0 01-6.516.583" fill="#818181" mask="url(#bd)"/></g><g transform="translate(29 2)"><mask id="bf" fill="#fff"><use xlink:href="#be"/></mask><path d="M5.793 0a5.793 5.793 0 015.792 5.793V8.32A5.792 5.792 0 110 8.32V5.793A5.793 5.793 0 015.793 0" fill="#FFF" mask="url(#bf)"/></g><g transform="translate(29 2)"><mask id="bh" fill="#fff"><use xlink:href="#bg"/></mask><path d="M5.793 1.5A4.298 4.298 0 001.5 5.793V8.32a4.298 4.298 0 004.293 4.293 4.298 4.298 0 004.292-4.293V5.793A4.298 4.298 0 005.793 1.5m0 14.114c-4.021 0-7.293-3.272-7.293-7.293V5.793C-1.5 1.77 1.772-1.5 5.793-1.5c4.021 0 7.292 3.27 7.292 7.293V8.32c0 4.02-3.271 7.293-7.292 7.293" fill="#818181" mask="url(#bh)"/></g><g transform="translate(1 14)"><mask id="bj" fill="#fff"><use xlink:href="#bi"/></mask><path d="M.67 9.913l.898-6.16A3 3 0 013.686 1.31 31.816 31.816 0 0112.753 0c3.095 0 6.192.438 9.293 1.313a3.001 3.001 0 012.165 2.54l.715 6.13a3 3 0 01-2.448 3.3l-3.475.627a35.328 35.328 0 01-12.5 0l-3.395-.612A3 3 0 01.67 9.913" fill="#FFF" mask="url(#bj)"/></g><g transform="translate(1 14)"><mask id="bl" fill="#fff"><use xlink:href="#bk"/></mask><path d="M12.752 1.5c-2.932 0-5.839.42-8.64 1.249a1.504 1.504 0 00-1.06 1.222l-.897 6.158a1.495 1.495 0 001.22 1.693l3.394.61c3.97.716 7.996.716 11.968 0l3.475-.625a1.503 1.503 0 001.224-1.65l-.715-6.13a1.497 1.497 0 00-1.082-1.27A32.728 32.728 0 0012.753 1.5m0 14.469c-2.178 0-4.354-.194-6.516-.583l-3.395-.611A4.483 4.483 0 01-.813 9.697l.897-6.16A4.512 4.512 0 013.261-.127C9.415-1.948 16.013-1.95 22.454-.13a4.486 4.486 0 013.247 3.809l.714 6.13a4.507 4.507 0 01-3.674 4.95l-3.474.627a36.766 36.766 0 01-6.516.583" fill="#818181" mask="url(#bl)"/></g><g transform="translate(8 2)"><mask id="bn" fill="#fff"><use xlink:href="#bm"/></mask><path d="M5.793 0a5.793 5.793 0 015.792 5.793V8.32A5.793 5.793 0 110 8.32V5.793A5.793 5.793 0 015.793 0" fill="#FFF" mask="url(#bn)"/></g><g transform="translate(8 2)"><mask id="bp" fill="#fff"><use xlink:href="#bo"/></mask><path d="M5.793 1.5A4.297 4.297 0 001.5 5.793V8.32a4.297 4.297 0 004.293 4.293 4.298 4.298 0 004.292-4.293V5.793A4.298 4.298 0 005.792 1.5m0 14.114c-4.02 0-7.292-3.272-7.292-7.293V5.793C-1.5 1.77 1.771-1.5 5.793-1.5c4.02 0 7.292 3.27 7.292 7.293V8.32c0 4.02-3.272 7.293-7.293 7.293" fill="#818181" mask="url(#bp)"/></g><g transform="translate(6 25)"><mask id="br" fill="#fff"><use xlink:href="#bq"/></mask><path d="M.443 13.646l1.164-7.79a4.998 4.998 0 013.599-4.077 48.129 48.129 0 0113.017-1.78c4.443 0 8.889.596 13.34 1.786a4.997 4.997 0 013.673 4.237l.926 7.745a5 5 0 01-4.1 5.518l-5.187.91a49.979 49.979 0 01-17.303 0l-5.05-.886a5 5 0 01-4.08-5.663" fill="#FFF" mask="url(#br)"/></g><g transform="translate(6 25)"><mask id="bt" fill="#fff"><use xlink:href="#bs"/></mask><path d="M1.926 13.867a3.48 3.48 0 002.856 3.964l5.05.887a48.373 48.373 0 0016.783 0l5.187-.912a3.502 3.502 0 002.871-3.862L33.747 6.2a3.48 3.48 0 00-2.57-2.966C22.578.935 13.806.932 5.61 3.224a3.505 3.505 0 00-2.52 2.854l-1.164 7.79zm16.297 8.585c-2.977 0-5.954-.26-8.91-.779l-5.05-.886a6.463 6.463 0 01-5.304-7.362l1.164-7.79a6.502 6.502 0 014.68-5.3C13.513-2.1 22.836-2.1 31.95.335a6.462 6.462 0 014.775 5.51l.926 7.744a6.503 6.503 0 01-5.329 7.173l-5.188.912a51.5 51.5 0 01-8.91.779z" fill="#FF7000" mask="url(#bt)"/></g><g><g transform="translate(15 8)"><mask id="bv" fill="#fff"><use xlink:href="#bu"/></mask><path d="M8.72 0h1.145a8 8 0 018.001 8v4.387a8 8 0 01-8 7.999H8.718a8 8 0 01-8-8V8a8 8 0 018-8" fill="#FFF" mask="url(#bv)"/></g><g transform="translate(15 8)"><mask id="bx" fill="#fff"><use xlink:href="#bw"/></mask><path d="M8.72 1.5A6.508 6.508 0 002.22 8v4.387a6.507 6.507 0 006.5 6.499h1.145a6.507 6.507 0 006.501-6.5V8c0-3.584-2.916-6.5-6.5-6.5H8.718zm1.145 20.386H8.72c-5.238 0-9.5-4.261-9.5-9.5V8c0-5.238 4.262-9.5 9.5-9.5h1.146c5.24 0 9.501 4.262 9.501 9.5v4.387c0 5.238-4.262 9.499-9.5 9.499z" fill="#FF7000" mask="url(#bx)"/></g></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_bestellungen" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1-.001C.448-.001 0 .448 0 1v23a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1.001" id="ca"/><path d="M1-.001C.448-.001 0 .448 0 1v23a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1.001H1z" id="cc"/><path d="M1.763 0A1 1 0 00.762 1.003a.97.97 0 00.027.226l3.53 15.001a1 1 0 00.973.77h22.98a1 1 0 00.952-.692l4.853-15A1 1 0 0033.125 0" id="ce"/><path d="M1.763 0a.999.999 0 00-.974 1.229l3.53 15.001a1 1 0 00.973.77h22.98a1 1 0 00.952-.692l4.853-15A1 1 0 0033.125 0H1.763z" id="cg"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="ci"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="ck"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="cm"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="co"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(5 3)"><mask id="cb" fill="#fff"><use xlink:href="#ca"/></mask><path d="M1 0h30a1 1 0 011 1v23a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1" fill="#FFF" mask="url(#cb)"/><mask id="cd" fill="#fff"><use xlink:href="#cc"/></mask><path d="M1.5 23.5h29v-22h-29v22zm29.5 3H1A2.503 2.503 0 01-1.5 24V1C-1.5-.379-.378-1.5 1-1.5h30c1.379 0 2.5 1.121 2.5 2.5v23c0 1.379-1.121 2.5-2.5 2.5z" fill="#FF7000" mask="url(#cd)"/></g><g fill="#FF7000"><path d="M32 10.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 10.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5M32 15.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5"/></g><g transform="translate(11 17)"><mask id="cf" fill="#fff"><use xlink:href="#ce"/></mask><path d="M1.763 0h31.362a1 1 0 01.952 1.308l-4.853 15a.999.999 0 01-.951.692H5.292a1 1 0 01-.973-.771l-3.53-15a1 1 0 01.974-1.23" fill="#FFF" mask="url(#cf)"/></g><g transform="translate(11 17)"><mask id="ch" fill="#fff"><use xlink:href="#cg"/></mask><path d="M5.688 15.5h22.22l4.53-14H2.394l3.294 14zm22.584 3H5.292a2.491 2.491 0 01-2.434-1.928l-3.53-15A2.502 2.502 0 011.764-1.5h31.362a2.503 2.503 0 012.379 3.27l-4.854 15a2.489 2.489 0 01-2.378 1.73z" fill="#818180" mask="url(#ch)"/></g><path d="M37 42.25H18a.75.75 0 01-.729-.571l-6.859-27.93H3a.75.75 0 010-1.5h8c.345 0 .646.237.729.572l6.859 27.929H37a.75.75 0 010 1.5" fill="#818180"/><g transform="translate(32 37)"><mask id="cj" fill="#fff"><use xlink:href="#ci"/></mask><path d="M4.5 9a4.5 4.5 0 100-9 4.5 4.5 0 000 9" fill="#FFF" mask="url(#cj)"/></g><g transform="translate(32 37)"><mask id="cl" fill="#fff"><use xlink:href="#ck"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818181" mask="url(#cl)"/></g><g><g transform="translate(14 37)"><mask id="cn" fill="#fff"><use xlink:href="#cm"/></mask><path d="M4.5 9a4.5 4.5 0 100-9 4.5 4.5 0 000 9" fill="#FFF" mask="url(#cn)"/></g><g transform="translate(14 37)"><mask id="cp" fill="#fff"><use xlink:href="#co"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818180" mask="url(#cp)"/></g></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_faq" xmlns="http://www.w3.org/2000/svg"><defs><path d="M4.001 0A4 4 0 000 4v17a4 4 0 004.001 4h1v7l9-7H29a4 4 0 004.001-4V4A4 4 0 0029 0" id="da"/><path d="M4.001 0A4 4 0 000 4v17a4 4 0 004.001 4h1v7l9-7H29a4 4 0 004.001-4V4A4 4 0 0029 0H4.001z" id="dc"/><path d="M4 0A4 4 0 00.001 4v13A4 4 0 004 21h12.231l7.307 5 .078-5H24a4 4 0 004.001-4V4A4 4 0 0024 0" id="de"/><path d="M4 0A4 4 0 00.001 4v13A4 4 0 004 21h12.231l7.307 5 .078-5H24a4 4 0 004.001-4V4A4 4 0 0024 0H4z" id="dg"/><path d="M1.014.875C.349 1.458.012 2.224.001 3.173h1.626c0-.533.18-.959.544-1.275.364-.316.843-.475 1.44-.475.616 0 1.085.175 1.407.522.323.349.484.829.484 1.444 0 .636-.245 1.233-.739 1.788L3.611 6.362c-.45.492-.749.938-.895 1.343-.147.403-.226.953-.238 1.65h1.626c0-.89.214-1.572.642-2.045l.959-.948c.947-.996 1.424-2.004 1.424-3.027 0-1.036-.311-1.851-.928-2.444C5.582.297 4.72 0 3.611 0 2.547 0 1.679.292 1.014.875zm1.635 10.602a.966.966 0 00-.24.67c0 .267.079.486.24.661.161.175.402.261.718.261.315 0 .557-.086.72-.261a.927.927 0 00.246-.661.957.957 0 00-.246-.67c-.163-.181-.405-.271-.72-.271-.316 0-.557.09-.718.271z" id="di"/><path d="M.062 0l.113 9.17h1.469L1.767 0H.062zm.18 11.301a.97.97 0 00-.243.67c0 .266.081.486.243.661.161.174.4.261.716.261.317 0 .556-.087.72-.261a.924.924 0 00.246-.661.958.958 0 00-.246-.67c-.164-.181-.403-.27-.72-.27-.316 0-.555.089-.716.27z" id="dk"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(3 4)"><mask id="db" fill="#fff"><use xlink:href="#da"/></mask><path d="M4 0h25a4 4 0 014 4v17a4 4 0 01-4 4H14l-9 7v-7H4a4 4 0 01-4-4V4a4 4 0 014-4" fill="#FFF" mask="url(#db)"/></g><g transform="translate(3 4)"><mask id="dd" fill="#fff"><use xlink:href="#dc"/></mask><path d="M4 1.5A2.503 2.503 0 001.5 4v17c0 1.379 1.122 2.5 2.5 2.5h2.5v5.433l6.986-5.433H29c1.38 0 2.5-1.121 2.5-2.5V4c0-1.378-1.12-2.5-2.5-2.5H4zm-.5 33.567v-8.589c-2.8-.253-5-2.614-5-5.478V4C-1.5.967.968-1.5 4-1.5h25c3.032 0 5.5 2.467 5.5 5.5v17c0 3.032-2.468 5.5-5.5 5.5H14.515L3.502 35.067z" fill="#818181" mask="url(#dd)"/></g><g transform="translate(17 18)"><mask id="df" fill="#fff"><use xlink:href="#de"/></mask><path d="M4 0h20a4 4 0 014 4v13a4 4 0 01-4 4h-.384l-.078 5-7.308-5H4a4 4 0 01-4-4V4a4 4 0 014-4" fill="#FFF" mask="url(#df)"/></g><g transform="translate(17 18)"><mask id="dh" fill="#fff"><use xlink:href="#dg"/></mask><path d="M4 1.5A2.503 2.503 0 001.5 4v13c0 1.379 1.122 2.5 2.5 2.5h12.695l5.386 3.686.059-3.686H24c1.38 0 2.5-1.121 2.5-2.5V4c0-1.378-1.12-2.5-2.5-2.5H4zm20.995 27.314L15.768 22.5H4.002A5.507 5.507 0 01-1.5 17V4C-1.5.967.968-1.5 4-1.5h20c3.031 0 5.5 2.467 5.5 5.5v13a5.51 5.51 0 01-4.407 5.391l-.099 6.423z" fill="#FF7000" mask="url(#dh)"/></g><g transform="translate(9 9)"><mask id="dj" fill="#fff"><use xlink:href="#di"/></mask><path fill="#818181" mask="url(#dj)" d="M-5 18.07h17.128V-5H-5z"/></g><g transform="translate(30 22)"><mask id="dl" fill="#fff"><use xlink:href="#dk"/></mask><path fill="#FF7000" mask="url(#dl)" d="M-5.001 17.894H6.924V-5H-5.001z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_kostenstelle" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1 0C.448 0 0 .434 0 .971v31.058C0 32.565.448 33 1 33h31c.552 0 1-.435 1-.971V.971C33 .434 32.552 0 32 0" id="ea"/><path d="M1 0C.448 0 0 .434 0 .971v31.058C0 32.565.448 33 1 33h31c.552 0 1-.435 1-.971V.971C33 .434 32.552 0 32 0H1z" id="ec"/><path d="M1 0a1 1 0 00-1 1v39a1 1 0 001 1h17a1 1 0 001-1V1a1 1 0 00-1-1" id="ee"/><path d="M1 0a1 1 0 00-1 1v39a1 1 0 001 1h17a1 1 0 001-1V1a1 1 0 00-1-1H1z" id="eg"/><path d="M0 13.5C0 20.956 6.045 27 13.5 27 20.956 27 27 20.956 27 13.5S20.956 0 13.5 0C6.045 0 0 6.044 0 13.5" id="ei"/><path d="M0 13.5C0 20.956 6.045 27 13.5 27 20.956 27 27 20.956 27 13.5S20.956 0 13.5 0C6.045 0 0 6.044 0 13.5" id="ek"/><path d="M3.072 1.728c-.767.96-1.536 2.112-1.728 3.648H0v1.152h1.152V7.872H0v.96h1.344A7.042 7.042 0 002.88 12.48c.96 1.344 2.496 1.92 4.224 1.92 1.344 0 2.496-.576 3.072-.96l-.192-1.344c-.576.384-1.536.768-2.688.768-1.152 0-2.304-.384-3.072-1.152-.576-.768-.96-1.728-1.152-2.88h6.144v-.96H3.072V6.528h6.144V5.376H3.264c.192-1.152.576-2.112 1.152-2.688.768-.768 1.728-1.152 2.88-1.152.96 0 1.92.192 2.496.577l.384-1.345C9.6.385 8.641 0 7.296 0 5.568 0 4.224.576 3.072 1.728z" id="em"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(11 10)"><mask id="eb" fill="#fff"><use xlink:href="#ea"/></mask><path d="M1 0h31c.553 0 1 .435 1 .97V32.03c0 .536-.447.97-1 .97H1c-.552 0-1-.434-1-.97V.97C0 .435.448 0 1 0" fill="#FFF" mask="url(#eb)"/><mask id="ed" fill="#fff"><use xlink:href="#ec"/></mask><path d="M1.5 31.5h30v-30h-30v30zm30.5 3H1c-1.378 0-2.5-1.109-2.5-2.471V.971C-1.5-.392-.378-1.5 1-1.5h31c1.379 0 2.5 1.108 2.5 2.471v31.058c0 1.362-1.121 2.471-2.5 2.471z" fill="#818181" mask="url(#ed)"/></g><g transform="translate(18 4)"><mask id="ef" fill="#fff"><use xlink:href="#ee"/></mask><path d="M1 0h17a1 1 0 011 1v39a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1" fill="#FFF" mask="url(#ef)"/><mask id="eh" fill="#fff"><use xlink:href="#eg"/></mask><path d="M1.5 39.5h16v-38h-16v38zm16.5 3H1A2.503 2.503 0 01-1.5 40V1C-1.5-.379-.378-1.5 1-1.5h17c1.379 0 2.5 1.121 2.5 2.5v39c0 1.379-1.121 2.5-2.5 2.5z" fill="#818181" mask="url(#eh)"/></g><g transform="translate(2 7)"><mask id="ej" fill="#fff"><use xlink:href="#ei"/></mask><path d="M13.5 27C20.956 27 27 20.956 27 13.5S20.956 0 13.5 0 0 6.044 0 13.5 6.044 27 13.5 27" fill="#FFF" mask="url(#ej)"/></g><g transform="translate(2 7)"><mask id="el" fill="#fff"><use xlink:href="#ek"/></mask><path d="M13.5 1.5c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.383-12-12-12m0 27c-8.271 0-15-6.73-15-15 0-8.271 6.729-15 15-15s15 6.729 15 15c0 8.27-6.729 15-15 15" fill="#FF7000" mask="url(#el)"/></g><g transform="translate(9 13)"><mask id="en" fill="#fff"><use xlink:href="#em"/></mask><path fill="#FF7000" mask="url(#en)" d="M-5 19.4h20.176V-5H-5z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_lieferadressen" xmlns="http://www.w3.org/2000/svg"><defs><path d="M11 6.737V4H5v7.789L0 16v2h3v19c0 1.104.896 2.001 2 2.001h28A2 2 0 0034.999 37V18H38v-2L19 0l-8 6.737z" id="fa"/><path d="M11 6.737V4H5v7.789L0 16v2h3v19c0 1.104.896 2.001 2 2.001h28A2 2 0 0034.999 37V18H38v-2L19 0l-8 6.737z" id="fc"/><path d="M1.999.001a2 2 0 00-2 2V15c0 1.104.896 2.001 2 2.001H16A2 2 0 0017.999 15v-3.672c0-.53-.209-1.038-.585-1.414L14 6.501v-4.5a2 2 0 00-2-2H1.999z" id="fe"/><path d="M1.999.001a2 2 0 00-2 2V15c0 1.104.896 2.001 2 2.001H16A2 2 0 0017.999 15v-3.672c0-.53-.209-1.038-.585-1.414L14 6.501v-4.5a2 2 0 00-2-2H1.999z" id="fg"/><path d="M0 4a4 4 0 108 0A4 4 0 003.999.001 4 4 0 000 4" id="fi"/><path d="M0 4a4 4 0 108 0A4 4 0 003.999.001 4 4 0 000 4" id="fk"/><path d="M2 0a2 2 0 00-2 2v17a2 2 0 002 2.001h20c1.104 0 2-.897 2-2.001V2a2 2 0 00-2-2" id="fm"/><path d="M2 0a2 2 0 00-2 2v17a2 2 0 002 2.001h20c1.104 0 2-.897 2-2.001V2a2 2 0 00-2-2H2z" id="fo"/><path d="M0 4a4 4 0 108 0 4 4 0 00-8 0" id="fq"/><path d="M0 4a4 4 0 108 0 4 4 0 00-8 0" id="fs"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(2 3)"><mask id="fb" fill="#fff"><use xlink:href="#fa"/></mask><path d="M19 0l19 16v2h-3v19a2 2 0 01-2 2H5a2 2 0 01-2-2V18H0v-2l5-4.211V4h6v2.737L19 0z" fill="#FFF" mask="url(#fb)"/></g><g transform="translate(2 3)"><mask id="fd" fill="#fff"><use xlink:href="#fc"/></mask><path d="M1.735 16.5H4.5V37a.5.5 0 00.5.5h28a.5.5 0 00.5-.5V16.5h2.764L19 1.961l-9.5 8V5.5h-3v6.987L1.735 16.5zM33 40.5H5c-1.93 0-3.5-1.57-3.5-3.5V19.5h-3v-4.198l5-4.211V2.5h9v1.013L19-1.961l20.5 17.263V19.5h-3V37c0 1.93-1.571 3.5-3.5 3.5z" fill="#818181" mask="url(#fd)"/></g><g transform="translate(28 25)"><mask id="ff" fill="#fff"><use xlink:href="#fe"/></mask><path d="M2 17a2 2 0 01-2-2V2a2 2 0 012-2h10a2 2 0 012 2v4.5l3.414 3.415c.376.375.586.884.586 1.414V15a2 2 0 01-2 2H2z" fill="#FFF" mask="url(#ff)"/></g><g transform="translate(28 25)"><mask id="fh" fill="#fff"><use xlink:href="#fg"/></mask><path d="M2 1.5c-.275 0-.5.226-.5.5v13c0 .275.225.5.5.5h14c.275 0 .5-.225.5-.5V11.33a.487.487 0 00-.146-.352L12.5 7.121v-5.12c0-.275-.225-.5-.5-.5H2zm14 17H2c-1.93 0-3.5-1.57-3.5-3.5V2C-1.5.07.07-1.5 2-1.5h10c1.93 0 3.5 1.57 3.5 3.5v3.88l2.975 2.974A3.47 3.47 0 0119.5 11.33V15c0 1.93-1.57 3.5-3.5 3.5z" fill="#FF7000" mask="url(#fh)"/></g><g transform="translate(35 37)"><mask id="fj" fill="#fff"><use xlink:href="#fi"/></mask><path d="M4 8a4 4 0 100-8 4 4 0 000 8" fill="#FFF" mask="url(#fj)"/></g><g transform="translate(35 37)"><mask id="fl" fill="#fff"><use xlink:href="#fk"/></mask><path d="M4 1.5A2.502 2.502 0 001.5 4c0 1.38 1.12 2.5 2.5 2.5 1.379 0 2.5-1.12 2.5-2.5 0-1.378-1.121-2.5-2.5-2.5m0 8A5.507 5.507 0 01-1.5 4C-1.5.97.968-1.5 4-1.5S9.5.97 9.5 4c0 3.032-2.468 5.5-5.5 5.5" fill="#FF7000" mask="url(#fl)"/></g><g><g transform="translate(10 21)"><mask id="fn" fill="#fff"><use xlink:href="#fm"/></mask><path d="M2 0h20a2 2 0 012 2v17a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2" fill="#FFF" mask="url(#fn)"/></g><g transform="translate(10 21)"><mask id="fp" fill="#fff"><use xlink:href="#fo"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v17a.5.5 0 00.5.5h20a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2zm20 21H2c-1.93 0-3.5-1.57-3.5-3.5V2C-1.5.07.07-1.5 2-1.5h20c1.93 0 3.5 1.57 3.5 3.5v17c0 1.93-1.57 3.5-3.5 3.5z" fill="#FF7000" mask="url(#fp)"/></g></g><g><g transform="translate(14 37)"><mask id="fr" fill="#fff"><use xlink:href="#fq"/></mask><path d="M4 8a4 4 0 100-8 4 4 0 000 8" fill="#FFF" mask="url(#fr)"/></g><g transform="translate(14 37)"><mask id="ft" fill="#fff"><use xlink:href="#fs"/></mask><path d="M4 1.5A2.503 2.503 0 001.5 4c0 1.38 1.122 2.5 2.5 2.5S6.5 5.38 6.5 4c0-1.378-1.122-2.5-2.5-2.5m0 8A5.506 5.506 0 01-1.5 4C-1.5.97.967-1.5 4-1.5S9.5.97 9.5 4c0 3.032-2.467 5.5-5.5 5.5" fill="#FF7000" mask="url(#ft)"/></g></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_newsletter" xmlns="http://www.w3.org/2000/svg"><defs><path id="ga" d="M0 0h40v38H0z"/><path id="gc" d="M0 42h40V0H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M11.83 15.8l-7 5v23h38v-23l-12-8z"/><g transform="translate(4 3)"><g transform="translate(0 4)"><mask id="gb" fill="#fff"><use xlink:href="#ga"/></mask><path d="M.46 12.7c-.286.184-.459.5-.46.84V37a1 1 0 001 1h38a1 1 0 001-1V13.54a1 1 0 00-.46-.84L20 0 .46 12.7zm1.04 1.09l18.5-12 18.5 12.02V36.5h-37V13.79z" fill="#818181" mask="url(#gb)"/></g><mask id="gd" fill="#fff"><use xlink:href="#gc"/></mask><path fill="#FFF" mask="url(#gd)" d="M6.829 33.8h26V.8h-26z"/><path d="M20 5h-.182A7.377 7.377 0 0016 6.12a7.813 7.813 0 00-2.82 3.18A11.215 11.215 0 0012 13.93a10.722 10.722 0 00.73 4.64 6.406 6.406 0 002.53 3 7.48 7.48 0 004 1.05 8.45 8.45 0 001.94-.231 5.527 5.527 0 001.55-.6l-.349-1.08a5.099 5.099 0 01-1.41.53 7.105 7.105 0 01-1.7.212 5.999 5.999 0 01-3.34-.901 5.42 5.42 0 01-2-2.62 9.599 9.599 0 01-.57-4 10.44 10.44 0 01.95-4.06 6.281 6.281 0 012.31-2.7A6.07 6.07 0 0120 6.24a5.619 5.619 0 014.67 1.91A8.058 8.058 0 0126 13.71a5.477 5.477 0 01-.71 2.74 2 2 0 01-1.72 1.05c-.91 0-1.31-.73-1.2-2.17l.49-5.19c-.403-.34-.86-.61-1.35-.8a4.347 4.347 0 00-1.36-.2 3.002 3.002 0 00-1.88.7 5.182 5.182 0 00-1.46 1.9 8.253 8.253 0 00-.71 2.77 4.705 4.705 0 00.51 2.999 2.217 2.217 0 002 1.09c.49.005.972-.13 1.39-.39.46-.31.84-.724 1.11-1.21a2.14 2.14 0 002.26 1.57 3.24 3.24 0 002.71-1.31 6.342 6.342 0 001.12-3.58 10.857 10.857 0 00-.7-4.63 6.302 6.302 0 00-2.49-3A7.337 7.337 0 0020.451 5H20zm-2.17 11.55a3.74 3.74 0 01-.25-2 6.765 6.765 0 01.9-3.05 2.089 2.089 0 011.81-1.12c.394-.003.783.093 1.13.28L21 15.33v.09c-.176.514-.47.98-.86 1.359a1.6 1.6 0 01-1.09.48c-.024.003-.049.003-.072.003a1.28 1.28 0 01-1.148-.712z" fill="#FF7000" mask="url(#gd)"/><path d="M7.5 21.967V2a.5.5 0 01.5-.5h24c.277 0 .5.223.5.5v19.827l1.5-.825V2a2 2 0 00-2-2H8a2 2 0 00-2 2v19.135l1.5.832z" fill="#FF7000" mask="url(#gd)"/><path d="M39 17.69h-.005a.932.932 0 00-.475.13L20 28 1.48 17.82a.9.9 0 00-.466-.13H1a1 1 0 00-1 1V41a1 1 0 001 1h38a1 1 0 001-1V18.69a.994.994 0 00-.997-1H39zm-.5 1.81v21h-37V19.54L20 29.71 38.5 19.5z" fill="#818181" mask="url(#gd)"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_produktfilter" xmlns="http://www.w3.org/2000/svg"><defs><path d="M0 2.501v9.998a2.5 2.5 0 105 0V2.501a2.5 2.5 0 10-5 0" id="ha"/><path d="M0 2.501v9.998a2.5 2.5 0 105 0V2.501a2.5 2.5 0 10-5 0" id="hc"/><path d="M2 0a2 2 0 00-2 2.001V3a2 2 0 002 2h4a2 2 0 002-2v-.999A2 2 0 006 0" id="he"/><path d="M2 0a2 2 0 00-2 2.001V3a2 2 0 002 2h4a2 2 0 002-2v-.999A2 2 0 006 0H2z" id="hg"/><path d="M0 0l5.135 7.5h8.759a3.999 3.999 0 003.858-2.944L19 0H0z" id="hi"/><path d="M0 0l5.135 7.5h8.759a3.999 3.999 0 003.858-2.944L19 0H0z" id="hk"/><path d="M-.001-.001L.999 16h6c2.211 0 4-1.79 4-4.001v-12h-11z" id="hm"/><path d="M-.001-.001L.999 16h6c2.211 0 4-1.79 4-4.001v-12h-11z" id="ho"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 003.999-4V2A2 2 0 0033 0" id="hq"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 003.999-4V2A2 2 0 0033 0H2z" id="hs"/></defs><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M24 14.1L11.98 2.08l-9.9 9.9L14.1 23.999 2.08 36.02l9.9 9.9 12.019-12.022L36.02 45.92l9.899-9.9L33.9 24l12.02-12.02-9.9-9.9z"/><path d="M24 14.1L11.98 2.08l-9.9 9.9L14.1 23.999 2.08 36.02l9.9 9.9 12.019-12.022L36.02 45.92l9.899-9.9L33.9 24l12.02-12.02-9.9-9.9L24 14.1zm12.02-9.9l7.779 7.78L31.779 24l12.02 12.02L36.02 43.8 24 31.778l-12.02 12.02-7.78-7.777 12.02-12.022L4.2 11.979l7.78-7.778L24 16.22l12.02-12.02z" fill="#FF7000"/><g transform="translate(13 20)"><mask id="hb" fill="#fff"><use xlink:href="#ha"/></mask><path d="M2.5 0A2.5 2.5 0 015 2.5v10a2.5 2.5 0 01-5 0v-10A2.5 2.5 0 012.5 0" fill="#FFF" mask="url(#hb)"/></g><g transform="translate(13 20)"><mask id="hd" fill="#fff"><use xlink:href="#hc"/></mask><path d="M2.5 1.5c-.551 0-1 .45-1 1v10c0 .551.449 1 1 1 .551 0 1-.449 1-1v-10c0-.55-.449-1-1-1m0 15c-2.206 0-4-1.794-4-4v-10c0-2.206 1.794-4 4-4s4 1.794 4 4v10c0 2.206-1.794 4-4 4" fill="#818181" mask="url(#hd)"/></g><g transform="translate(2 16)"><mask id="hf" fill="#fff"><use xlink:href="#he"/></mask><path d="M8 2v1a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2h4a2 2 0 012 2" fill="#FFF" mask="url(#hf)"/></g><g transform="translate(2 16)"><mask id="hh" fill="#fff"><use xlink:href="#hg"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h4a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2zm4 5H2C.07 6.5-1.5 4.93-1.5 3V2C-1.5.07.07-1.5 2-1.5h4C7.93-1.5 9.5.07 9.5 2v1c0 1.93-1.57 3.5-3.5 3.5z" fill="#818181" mask="url(#hh)"/></g><path fill="#FFF" d="M6 22h7v-7H6z"/><path d="M6 22h7v-7H6v7zm1.5-1.5h4v-4h-4v4z" fill="#818181"/><g transform="translate(24 22)"><mask id="hj" fill="#fff"><use xlink:href="#hi"/></mask><path d="M0 0l5.135 7.5h8.759a4 4 0 003.858-2.944L19 0H0z" fill="#FFF" mask="url(#hj)"/></g><g transform="translate(24 22)"><mask id="hl" fill="#fff"><use xlink:href="#hk"/></mask><path d="M5.926 6h7.968a2.508 2.508 0 002.412-1.84l.727-2.66H2.845L5.926 6zm7.968 3h-9.55L-2.845-1.5h23.81L19.2 4.953A5.515 5.515 0 0113.894 9z" fill="#818181" mask="url(#hl)"/></g><path d="M31.5 31.75H29A5.757 5.757 0 0123.25 26v-3h1.5v3A4.254 4.254 0 0029 30.25h2.5v1.5z" fill="#818181"/><g><g transform="translate(29 28)"><mask id="hn" fill="#fff"><use xlink:href="#hm"/></mask><path d="M0 0h11v12c0 2.21-1.79 4-4 4H1L0 0z" fill="#FFF" mask="url(#hn)"/></g><g transform="translate(29 28)"><mask id="hp" fill="#fff"><use xlink:href="#ho"/></mask><path d="M2.409 14.5h4.59c1.38 0 2.5-1.121 2.5-2.5V1.5H1.598l.812 13zm4.59 3H-.408l-1.188-19H12.5V12c0 3.032-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#hp)"/></g></g><g><g transform="translate(11 13)"><mask id="hr" fill="#fff"><use xlink:href="#hq"/></mask><path d="M2 0h31a2 2 0 012 2v5a4 4 0 01-4 4H2a2 2 0 01-2-2V2a2 2 0 012-2" fill="#FFF" mask="url(#hr)"/></g><g transform="translate(11 13)"><mask id="ht" fill="#fff"><use xlink:href="#hs"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v7a.5.5 0 00.5.5h29c1.378 0 2.5-1.122 2.5-2.5V2a.5.5 0 00-.5-.5H2zm29 11H2c-1.93 0-3.5-1.57-3.5-3.5V2C-1.5.07.07-1.5 2-1.5h31c1.929 0 3.5 1.57 3.5 3.5v5c0 3.033-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#ht)"/></g></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_profil" xmlns="http://www.w3.org/2000/svg"><defs><path d="M6.873 2.379a6 6 0 00-4.905 5.04L.747 15.737a5.998 5.998 0 004.398 6.669C10.403 23.801 15.521 24.5 20.5 24.5c5.028 0 10.199-.712 15.511-2.135a6.002 6.002 0 004.448-5.806 6.17 6.17 0 00-.041-.689l-.971-8.28a6.002 6.002 0 00-4.957-5.217L20.5 0" id="ia"/><path d="M6.873 2.379a6 6 0 00-4.905 5.04L.747 15.737a6 6 0 004.398 6.669C10.403 23.801 15.521 24.5 20.5 24.5c5.028 0 10.199-.712 15.511-2.135a6.002 6.002 0 004.407-6.495l-.971-8.28a6.002 6.002 0 00-4.957-5.217L20.5 0 6.873 2.379z" id="ic"/><path d="M9 0a9 9 0 00-9 9v5a9 9 0 009 9h1a9 9 0 009-9V9a9 9 0 00-9-9" id="ie"/><path d="M9 0a9 9 0 00-9 9v5a9 9 0 009 9h1a9 9 0 009-9V9a9 9 0 00-9-9H9z" id="ig"/><path d="M15.832.988L.276 16.543l5.657 5.658L21.49 6.644a1 1 0 000-1.414L17.246.988a.993.993 0 00-.707-.293.993.993 0 00-.707.293z" id="ii"/><path d="M15.832.988L.276 16.543l5.657 5.658L21.49 6.644a1 1 0 000-1.414L17.246.988a.993.993 0 00-.707-.293.993.993 0 00-.707.293z" id="ik"/><path d="M2.276 1.543L.615 7.634a1.001 1.001 0 00.701 1.228c.173.047.355.047.527 0l6.09-1.661 1.06-1.06L3.337.483l-1.061 1.06z" id="im"/><path d="M2.276 1.543L.615 7.634a1 1 0 00.701 1.228c.173.047.355.047.527 0l6.09-1.661 1.06-1.06L3.337.483l-1.061 1.06z" id="io"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(3 21)"><mask id="ib" fill="#fff"><use xlink:href="#ia"/></mask><path d="M.748 15.736l1.22-8.317a6 6 0 014.904-5.04L20.5 0l13.99 2.373a6.001 6.001 0 014.956 5.217l.971 8.28a6.002 6.002 0 01-4.406 6.495C30.698 23.788 25.528 24.5 20.5 24.5c-4.977 0-10.096-.699-15.354-2.094a6 6 0 01-4.397-6.67" fill="#FFF" mask="url(#ib)"/></g><g transform="translate(3 21)"><mask id="id" fill="#fff"><use xlink:href="#ic"/></mask><path d="M2.232 15.954a4.496 4.496 0 003.297 5.002C10.639 22.312 15.676 23 20.499 23c4.873 0 9.96-.701 15.125-2.084a4.524 4.524 0 003.304-4.871l-.972-8.28a4.523 4.523 0 00-3.717-3.913l-13.736-2.33L7.13 3.856a4.492 4.492 0 00-3.678 3.781l-1.22 8.317zM20.5 26c-5.084 0-10.38-.722-15.74-2.144a7.498 7.498 0 01-5.497-8.338l1.22-8.317a7.487 7.487 0 016.132-6.3l13.627-2.379a1.5 1.5 0 01.509-.001L34.74.894c3.262.554 5.81 3.235 6.196 6.521l.97 8.28c.43 3.671-1.936 7.161-5.507 8.119C30.983 25.265 25.634 26 20.5 26z" fill="#818181" mask="url(#id)"/></g><g transform="translate(14 2)"><mask id="if" fill="#fff"><use xlink:href="#ie"/></mask><path d="M9 0h1a9 9 0 019 9v5a9 9 0 01-9 9H9a9 9 0 01-9-9V9a9 9 0 019-9" fill="#FFF" mask="url(#if)"/></g><g transform="translate(14 2)"><mask id="ih" fill="#fff"><use xlink:href="#ig"/></mask><path d="M9 1.5C4.864 1.5 1.5 4.864 1.5 9v5c0 4.136 3.364 7.5 7.5 7.5h1c4.136 0 7.5-3.364 7.5-7.5V9c0-4.136-3.364-7.5-7.5-7.5H9zm1 23H9C3.21 24.5-1.5 19.79-1.5 14V9C-1.5 3.21 3.21-1.5 9-1.5h1c5.79 0 10.5 4.71 10.5 10.5v5c0 5.79-4.71 10.5-10.5 10.5z" fill="#818181" mask="url(#ih)"/></g><g transform="translate(24 17)"><mask id="ij" fill="#fff"><use xlink:href="#ii"/></mask><path d="M.276 16.544L15.832.988a.999.999 0 011.414 0l4.243 4.243a.999.999 0 010 1.414L5.933 22.2.276 16.544z" fill="#FFF" mask="url(#ij)"/></g><g transform="translate(24 17)"><mask id="il" fill="#fff"><use xlink:href="#ik"/></mask><path d="M2.397 16.544l3.535 3.536L20.075 5.938 16.54 2.402 2.397 16.544zm3.535 7.778l-7.778-7.778L14.771-.073a2.504 2.504 0 013.535 0L22.55 4.17c.473.472.733 1.1.733 1.768 0 .668-.26 1.296-.734 1.768L5.932 24.322z" fill="#FF7000" mask="url(#il)"/></g><g transform="translate(22 32)"><mask id="in" fill="#fff"><use xlink:href="#im"/></mask><path d="M8.993 6.14L3.337.485l-1.06 1.06-1.662 6.09a1.002 1.002 0 001.228 1.229l6.09-1.661 1.06-1.061z" fill="#FFF" mask="url(#in)"/></g><g transform="translate(22 32)"><mask id="ip" fill="#fff"><use xlink:href="#io"/></mask><path d="M3.497 2.765l-1.205 4.42L6.711 5.98 3.497 2.764zm-1.918 7.633A2.504 2.504 0 01-.833 7.24L.934.763l2.403-2.402 7.777 7.779-2.402 2.402-6.475 1.767a2.484 2.484 0 01-.658.088z" fill="#FF7000" mask="url(#ip)"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_sachnummern" xmlns="http://www.w3.org/2000/svg"><defs><path d="M7.923.406l-7.5 5.295A1.002 1.002 0 000 6.518V43a1 1 0 001.001 1H16c.552 0 1-.449 1-1V6.518a1 1 0 00-.424-.817L9.077.406a1.005 1.005 0 00-1.154 0" id="ja"/><path d="M7.923.406l-7.5 5.295A1.002 1.002 0 000 6.518V43a1 1 0 001.001 1H16c.552 0 1-.449 1-1V6.518a1 1 0 00-.424-.817L9.077.406a1.005 1.005 0 00-1.154 0z" id="jc"/><path d="M0 2.5a2.5 2.5 0 005.001 0A2.5 2.5 0 000 2.5" id="je"/><path d="M0 2.5v10a2.5 2.5 0 105 0v-10a2.5 2.5 0 00-5 0" id="jg"/><path d="M0 2.5v10a2.5 2.5 0 105 0v-10a2.5 2.5 0 00-5 0" id="ji"/><path d="M2 0a2 2 0 00-2 2v1a2 2 0 002 2h4.001A2 2 0 008 3V2a2 2 0 00-1.999-2" id="jk"/><path d="M2 0a2 2 0 00-2 2v1a2 2 0 002 2h4.001A2 2 0 008 3V2a2 2 0 00-1.999-2H2z" id="jm"/><path d="M0 0l5.135 7.5h8.759a4 4 0 003.858-2.943L19.001 0H0z" id="jo"/><path d="M0 0l5.135 7.5h8.759a4 4 0 003.858-2.943L19.001 0H0z" id="jq"/><path d="M0 0l1 16h6a4 4 0 004-4V0H0z" id="js"/><path d="M0 0l1 16h6a4 4 0 004-4V0H0z" id="ju"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 004-3.999V2a2 2 0 00-1.999-2" id="jw"/><path d="M2 0a2 2 0 00-2 2v7a2 2 0 002 2h29a4 4 0 004-3.999V2a2 2 0 00-1.999-2H2z" id="jy"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(15 2)"><mask id="jb" fill="#fff"><use xlink:href="#ja"/></mask><path d="M.423 5.701l7.5-5.294a1.001 1.001 0 011.154 0l7.5 5.294a.999.999 0 01.423.817V43a1 1 0 01-1 1H1a1 1 0 01-1-1V6.518a1 1 0 01.423-.817" fill="#FFF" mask="url(#jb)"/></g><g transform="translate(15 2)"><mask id="jd" fill="#fff"><use xlink:href="#jc"/></mask><path d="M1.5 42.5h14V6.777l-7-4.942-7 4.942V42.5zm14.5 3H1A2.503 2.503 0 01-1.5 43V6.518c0-.81.395-1.574 1.057-2.04l.001-.002 7.5-5.295a2.507 2.507 0 012.882 0l7.501 5.295a2.503 2.503 0 011.06 2.042V43c0 1.38-1.122 2.5-2.5 2.5z" fill="#FF7000" mask="url(#jd)"/></g><g transform="translate(21 7)"><mask id="jf" fill="#fff"><use xlink:href="#je"/></mask><path d="M2.5 1.5c-.55 0-1 .45-1 1 0 .551.45 1 1 1 .551 0 1-.449 1-1 0-.55-.449-1-1-1m0 5c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4" fill="#FF7000" mask="url(#jf)"/></g><path d="M25.38 32l-.499 2.844h-1.326L24.053 32H22.81l-.5 2.844h-1.797v1.19H22.1l-.342 1.94H20v1.176h1.551l-.492 2.803h1.251l.492-2.803h1.32l-.493 2.803h1.252l.492-2.803h1.736v-1.176h-1.53l.341-1.94h1.71v-1.19H26.13l.5-2.844h-1.25zm-2.038 4.033h1.327l-.342 1.941h-1.319l.334-1.94z" fill="#FF7000"/><g transform="translate(13 20)"><mask id="jh" fill="#fff"><use xlink:href="#jg"/></mask><path d="M2.5 0A2.5 2.5 0 015 2.5v10a2.5 2.5 0 01-5 0v-10A2.5 2.5 0 012.5 0" fill="#FFF" mask="url(#jh)"/></g><g transform="translate(13 20)"><mask id="jj" fill="#fff"><use xlink:href="#ji"/></mask><path d="M2.5 1.5c-.55 0-1 .45-1 1v10a1.001 1.001 0 002 0v-10c0-.55-.449-1-1-1m0 15c-2.206 0-4-1.794-4-4v-10c0-2.206 1.794-4 4-4s4 1.794 4 4v10c0 2.206-1.794 4-4 4" fill="#818181" mask="url(#jj)"/></g><g transform="translate(2 16)"><mask id="jl" fill="#fff"><use xlink:href="#jk"/></mask><path d="M8 2v1a2 2 0 01-2 2H2a2 2 0 01-2-2V2a2 2 0 012-2h4a2 2 0 012 2" fill="#FFF" mask="url(#jl)"/></g><g transform="translate(2 16)"><mask id="jn" fill="#fff"><use xlink:href="#jm"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h4a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5H2zm4 5H2C.07 6.5-1.5 4.93-1.5 3V2C-1.5.07.07-1.5 2-1.5h4C7.93-1.5 9.5.07 9.5 2v1c0 1.93-1.57 3.5-3.5 3.5z" fill="#818181" mask="url(#jn)"/></g><path fill="#FFF" d="M6 22h7v-7H6z"/><path d="M6 22h7v-7H6v7zm1.5-1.5h4.001v-4H7.5v4z" fill="#818181"/><g transform="translate(24 22)"><mask id="jp" fill="#fff"><use xlink:href="#jo"/></mask><path d="M0 0l5.135 7.5h8.76a4.001 4.001 0 003.857-2.943L19 0H0z" fill="#FFF" mask="url(#jp)"/></g><g transform="translate(24 22)"><mask id="jr" fill="#fff"><use xlink:href="#jq"/></mask><path d="M5.926 6h7.968a2.508 2.508 0 002.412-1.84l.728-2.66H2.845L5.926 6zm7.968 3h-9.55L-2.845-1.5h23.811l-1.768 6.453A5.513 5.513 0 0113.894 9z" fill="#818181" mask="url(#jr)"/></g><path d="M31.5 31.75H29A5.756 5.756 0 0123.25 26v-3h1.5v3A4.254 4.254 0 0029 30.25h2.5v1.5z" fill="#818181"/><g><g transform="translate(29 28)"><mask id="jt" fill="#fff"><use xlink:href="#js"/></mask><path d="M0 0h11v12a4 4 0 01-4 4H1L0 0z" fill="#FFF" mask="url(#jt)"/></g><g transform="translate(29 28)"><mask id="jv" fill="#fff"><use xlink:href="#ju"/></mask><path d="M2.41 14.5H7c1.38 0 2.5-1.12 2.5-2.5V1.5H1.597l.812 13zm4.59 3H-.409l-1.188-19H12.5V12c0 3.032-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#jv)"/></g></g><g><g transform="translate(11 13)"><mask id="jx" fill="#fff"><use xlink:href="#jw"/></mask><path d="M2 0h31a2 2 0 012 2v5a4 4 0 01-4 4H2a2 2 0 01-2-2V2a2 2 0 012-2" fill="#FFF" mask="url(#jx)"/></g><g transform="translate(11 13)"><mask id="jz" fill="#fff"><use xlink:href="#jy"/></mask><path d="M2 1.5a.5.5 0 00-.5.5v7a.5.5 0 00.5.5h29c1.38 0 2.5-1.122 2.5-2.5V2a.5.5 0 00-.5-.5H2zm29 11H2c-1.93 0-3.5-1.57-3.5-3.5V2C-1.5.07.07-1.5 2-1.5h31c1.93 0 3.5 1.57 3.5 3.5v5c0 3.033-2.468 5.5-5.5 5.5z" fill="#818181" mask="url(#jz)"/></g></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_sammelbestellungen" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1.762 0a1 1 0 00-1 1.003c.001.075.009.151.027.226l3.529 15c.107.451.51.771.974.771h22.981a1 1 0 00.951-.692l4.853-15A1.001 1.001 0 0033.126 0" id="ka"/><path d="M1.762 0a1 1 0 00-.973 1.229l3.529 15c.107.451.51.771.974.771h22.981a1 1 0 00.951-.692l4.853-15A1.001 1.001 0 0033.126 0H1.762z" id="kc"/><path d="M-.001 4.5a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0" id="ke"/><path d="M-.001 4.5a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0" id="kg"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="ki"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="kk"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(11 17)"><mask id="kb" fill="#fff"><use xlink:href="#ka"/></mask><path d="M1.763 0h31.363a1 1 0 01.95 1.308l-4.852 15a1 1 0 01-.951.692H5.292a1 1 0 01-.973-.77l-3.53-15A1.001 1.001 0 011.763 0" fill="#FFF" mask="url(#kb)"/></g><g transform="translate(11 17)"><mask id="kd" fill="#fff"><use xlink:href="#kc"/></mask><path d="M5.688 15.5h22.22l4.53-14H2.394l3.294 14zm22.585 3H5.292a2.492 2.492 0 01-2.434-1.926L-.672 1.573a2.487 2.487 0 01.309-1.89A2.486 2.486 0 011.19-1.432c.186-.044.378-.067.572-.067h31.363a2.503 2.503 0 012.378 3.272L30.65 16.77a2.494 2.494 0 01-2.378 1.73z" fill="#818180" mask="url(#kd)"/></g><path d="M37 42.25H18a.749.749 0 01-.729-.571l-6.859-27.93H3a.75.75 0 110-1.5h8a.75.75 0 01.73.573l6.858 27.928H37a.75.75 0 010 1.5" fill="#818180"/><g transform="translate(32 37)"><mask id="kf" fill="#fff"><use xlink:href="#ke"/></mask><path d="M4.5 9a4.5 4.5 0 10-.001-9.001 4.5 4.5 0 000 9" fill="#FFF" mask="url(#kf)"/></g><g transform="translate(32 37)"><mask id="kh" fill="#fff"><use xlink:href="#kg"/></mask><path d="M4.5 1.5c-1.655 0-3 1.346-3 3s1.345 3 3 3c1.654 0 3-1.346 3-3s-1.346-3-3-3m0 9c-3.31 0-6-2.691-6-6 0-3.31 2.69-6 6-6 3.309 0 6 2.69 6 6 0 3.309-2.691 6-6 6" fill="#818181" mask="url(#kh)"/></g><g transform="translate(14 37)"><mask id="kj" fill="#fff"><use xlink:href="#ki"/></mask><path d="M4.5 9a4.5 4.5 0 100-9.001 4.5 4.5 0 000 9" fill="#FFF" mask="url(#kj)"/></g><g transform="translate(14 37)"><mask id="kl" fill="#fff"><use xlink:href="#kk"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818180" mask="url(#kl)"/></g><g fill="#FF7000"><path d="M35 24.75a.75.75 0 01-.75-.75V9c0-3.17 2.578-5.75 5.75-5.75h4a.75.75 0 010 1.5h-4A4.255 4.255 0 0035.75 9v15a.75.75 0 01-.75.75"/><path d="M35 25.561l-3.53-3.53a.749.749 0 111.06-1.06L35 23.438l2.47-2.469a.749.749 0 111.06 1.06L35 25.561zM27 30.06l-3.53-3.53a.75.75 0 111.06-1.06L27 27.94l2.47-2.47a.749.749 0 111.06 1.06L27 30.06z"/><path d="M27 28.75a.75.75 0 01-.75-.75V4a.75.75 0 011.5 0v24a.75.75 0 01-.75.75M19 15.75a.75.75 0 01-.75-.75V9A4.255 4.255 0 0014 4.75H7a.75.75 0 010-1.5h7c3.17 0 5.75 2.58 5.75 5.75v6a.75.75 0 01-.75.75"/><path d="M19 16.56l-3.53-3.53a.75.75 0 011.06-1.06L19 14.44l2.47-2.47a.749.749 0 111.06 1.06L19 16.56z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_schnellerfassung" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="#818181"><path d="M9 13h2v8H9zM9 27h2v8H9zM19 13h2v8h-2zM19 27h2v8h-2zM23 13h2v8h-2zM23 27h2v8h-2zM33 13h2v8h-2zM33 27h2v8h-2zM37 13h2v8h-2zM37 27h2v8h-2zM13 13h4v8h-4zM13 27h4v8h-4zM27 13h4v8h-4zM27 27h4v8h-4z"/></g><path d="M43.75 15.5a.75.75 0 01-.75-.75v-5c0-1.241-1.01-2.25-2.25-2.25h-5a.75.75 0 010-1.5h5a3.755 3.755 0 013.75 3.75v5a.75.75 0 01-.75.75M3.75 15.5a.75.75 0 01-.75-.75v-5A3.754 3.754 0 016.75 6h5a.75.75 0 010 1.5h-5A2.252 2.252 0 004.5 9.75v5a.75.75 0 01-.75.75M11.75 41.5h-5A3.755 3.755 0 013 37.75v-5a.75.75 0 011.5 0v5C4.5 38.99 5.509 40 6.75 40h5a.75.75 0 010 1.5M40.75 41.5h-5a.75.75 0 010-1.5h5c1.24 0 2.25-1.01 2.25-2.25v-5a.75.75 0 011.5 0v5a3.755 3.755 0 01-3.75 3.75M42.75 24.5h-38a.75.75 0 010-1.5h38a.75.75 0 010 1.5" fill="#FF7000"/></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_statistik" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1.762 0a1 1 0 00-1 1.003c.001.075.009.151.027.226L4.318 16.23c.107.45.51.77.974.77h22.98a.997.997 0 00.951-.692l4.854-15A1 1 0 0033.125 0" id="ma"/><path d="M1.762 0a1 1 0 00-.973 1.229L4.318 16.23c.107.45.51.77.974.77h22.98a.997.997 0 00.951-.692l4.854-15A1 1 0 0033.125 0H1.762z" id="mc"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="me"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="mg"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="mi"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="mk"/><path d="M0 1.5a1.5 1.5 0 103 0A1.5 1.5 0 001.5-.001C.672-.001 0 .672 0 1.5z" id="mm"/><path d="M0 1.5a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0z" id="mo"/><path d="M0 1.5a1.5 1.5 0 003 0 1.5 1.5 0 10-3 0z" id="mq"/><path d="M0 1.5a1.5 1.5 0 103 0 1.5 1.5 0 10-3 0z" id="ms"/><path d="M0 1.5a1.5 1.5 0 103 0C3 .672 2.328-.001 1.5-.001S0 .672 0 1.5z" id="mu"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(11 17)"><mask id="mb" fill="#fff"><use xlink:href="#ma"/></mask><path d="M1.763 0h31.362a1 1 0 01.952 1.308l-4.853 15a.999.999 0 01-.951.692H5.292a1 1 0 01-.973-.771l-3.53-15a1 1 0 01.974-1.23" fill="#FFF" mask="url(#mb)"/></g><g transform="translate(11 17)"><mask id="md" fill="#fff"><use xlink:href="#mc"/></mask><path d="M5.688 15.5h22.22l4.53-14H2.394l3.294 14zm22.584 3H5.292a2.491 2.491 0 01-2.434-1.928l-3.53-15A2.502 2.502 0 011.764-1.5h31.362a2.503 2.503 0 012.379 3.27l-4.854 15a2.489 2.489 0 01-2.378 1.73z" fill="#818180" mask="url(#md)"/></g><path d="M37 42.25H18a.75.75 0 01-.729-.571l-6.859-27.93H3a.75.75 0 010-1.5h8c.345 0 .646.237.729.572l6.859 27.929H37a.75.75 0 010 1.5" fill="#818180"/><g transform="translate(32 37)"><mask id="mf" fill="#fff"><use xlink:href="#me"/></mask><path d="M4.5 9a4.5 4.5 0 100-9 4.5 4.5 0 000 9" fill="#FFF" mask="url(#mf)"/></g><g transform="translate(32 37)"><mask id="mh" fill="#fff"><use xlink:href="#mg"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818181" mask="url(#mh)"/></g><g transform="translate(14 37)"><mask id="mj" fill="#fff"><use xlink:href="#mi"/></mask><path d="M4.5 9a4.5 4.5 0 100-9 4.5 4.5 0 000 9" fill="#FFF" mask="url(#mj)"/></g><g transform="translate(14 37)"><mask id="ml" fill="#fff"><use xlink:href="#mk"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818180" mask="url(#ml)"/></g><g transform="translate(2 39)"><mask id="mn" fill="#fff"><use xlink:href="#mm"/></mask><path fill="#FF7000" mask="url(#mn)" d="M-5 8H8V-5H-5z"/></g><path d="M3.5 41.25a.75.75 0 01-.607-1.189l13-18a.746.746 0 01.942-.232l7.38 3.69 8.642-14.405c.06-.1.142-.184.24-.247l10.652-6.78V4a.75.75 0 011.5 0v.5a.75.75 0 01-.346.633L34.05 12.038l-8.908 14.848a.752.752 0 01-.979.285l-7.43-3.715L4.107 40.939a.745.745 0 01-.608.31" fill="#FF7000"/><g transform="translate(15 21)"><mask id="mp" fill="#fff"><use xlink:href="#mo"/></mask><path fill="#FF7000" mask="url(#mp)" d="M-5 8H8V-5H-5z"/></g><g transform="translate(23 25)"><mask id="mr" fill="#fff"><use xlink:href="#mq"/></mask><path fill="#FF7000" mask="url(#mr)" d="M-5 8H8V-5H-5z"/></g><g transform="translate(32 10)"><mask id="mt" fill="#fff"><use xlink:href="#ms"/></mask><path fill="#FF7000" mask="url(#mt)" d="M-5 8H8V-5H-5z"/></g><g transform="translate(43 3)"><mask id="mv" fill="#fff"><use xlink:href="#mu"/></mask><path fill="#FF7000" mask="url(#mv)" d="M-5 8H8V-5H-5z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_unternehmenseinstellungen" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1 0a1 1 0 00-1 1v22.999a1 1 0 001 1h19a1 1 0 001-1V1a1 1 0 00-1-1" id="na"/><path d="M1 0a1 1 0 00-1 1v22.999a1 1 0 001 1h19a1 1 0 001-1V1a1 1 0 00-1-1H1z" id="nc"/><path d="M1 0a1 1 0 00-1 1v40a1 1 0 001 1h6.001V31H19v11h6.001A1 1 0 0026 41V1a1 1 0 00-.999-1H1z" id="ne"/><path d="M1 0a1 1 0 00-1 1v40a1 1 0 001 1h6.001V31H19v11h6.001A1 1 0 0026 41V1a1 1 0 00-.999-1H1z" id="ng"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(23 15)"><mask id="nb" fill="#fff"><use xlink:href="#na"/></mask><path d="M1 0h19a1 1 0 011 1v23a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1" fill="#FFF" mask="url(#nb)"/><mask id="nd" fill="#fff"><use xlink:href="#nc"/></mask><path d="M1.5 23.5h18v-22h-18v22zm18.5 3H1A2.503 2.503 0 01-1.5 24V1C-1.5-.378-.378-1.5 1-1.5h19c1.379 0 2.5 1.122 2.5 2.5v23c0 1.379-1.121 2.5-2.5 2.5z" fill="#818181" mask="url(#nd)"/></g><path fill="#818181" d="M37.5 23.5h2v-3h-2zM37.5 28.5h2v-3h-2zM37.5 33.5h2v-3h-2zM34.5 23.5h2v-3h-2zM34.5 28.5h2v-3h-2zM34.5 33.5h2v-3h-2zM31.5 23.5h2v-3h-2zM31.5 28.5h2v-3h-2zM31.5 33.5h2v-3h-2z"/><g transform="translate(4 3)"><mask id="nf" fill="#fff"><use xlink:href="#ne"/></mask><path d="M25 0a1 1 0 011 1v40a1 1 0 01-1 1h-6V31H7v11H1a1 1 0 01-1-1V1a1 1 0 011-1h24z" fill="#FFF" mask="url(#nf)"/></g><g transform="translate(4 3)"><mask id="nh" fill="#fff"><use xlink:href="#ng"/></mask><path d="M20.5 40.5h4v-39h-23v39h4v-11h15v11zm4.5 3h-7.5v-11h-9v11H1A2.503 2.503 0 01-1.5 41V1C-1.5-.378-.378-1.5 1-1.5h24c1.38 0 2.5 1.122 2.5 2.5v40c0 1.379-1.12 2.5-2.5 2.5z" fill="#FF7000" mask="url(#nh)"/></g><path fill="#FF7000" d="M10 19.001h14V18H10z"/><path fill="#FF7000" d="M9.5 19.5h15v-2h-15zM10 26h14v-1H10z"/><path fill="#FF7000" d="M9.5 26.5h15v-2h-15zM10 12h14v-1H10z"/><path fill="#FF7000" d="M9.5 12.5h15v-2h-15z"/></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_myeshop_zugenehmigen" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1.762 0a1 1 0 00-1 1.003c.001.075.009.151.027.226l3.529 15c.107.451.51.771.974.771h22.981a1 1 0 00.951-.692l4.853-15A1.001 1.001 0 0033.126 0" id="oa"/><path d="M1.762 0a1 1 0 00-.973 1.229l3.529 15c.107.451.51.771.974.771h22.981a1 1 0 00.951-.692l4.853-15A1.001 1.001 0 0033.126 0H1.762z" id="oc"/><path d="M-.001 4.5a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0" id="oe"/><path d="M-.001 4.5a4.5 4.5 0 109 0 4.5 4.5 0 00-9 0" id="og"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="oi"/><path d="M0 4.5a4.5 4.5 0 109 0 4.5 4.5 0 10-9 0" id="ok"/><path d="M23.743.382a.44.44 0 00-.032.029l-.019.018L11.671 12.45 5.308 6.085a1.004 1.004 0 00-1.415 0L.358 9.621a.997.997 0 000 1.414l10.607 10.607a1 1 0 001.413 0L28.642 5.379a.993.993 0 00.293-.707.993.993 0 00-.293-.707L25.107.429a.996.996 0 00-1.364-.047z" id="om"/><path d="M23.692.429L11.671 12.45 5.308 6.085a1.004 1.004 0 00-1.415 0L.358 9.621a.999.999 0 000 1.414l10.607 10.607a1 1 0 001.413 0L28.642 5.379a.999.999 0 000-1.414L25.107.429a1 1 0 00-1.415 0z" id="oo"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(11 17)"><mask id="ob" fill="#fff"><use xlink:href="#oa"/></mask><path d="M1.763 0h31.363a1 1 0 01.95 1.308l-4.852 15a1 1 0 01-.951.692H5.292a1 1 0 01-.973-.77l-3.53-15A1.001 1.001 0 011.763 0" fill="#FFF" mask="url(#ob)"/></g><g transform="translate(11 17)"><mask id="od" fill="#fff"><use xlink:href="#oc"/></mask><path d="M5.688 15.5h22.22l4.53-14H2.394l3.294 14zm22.585 3H5.292a2.492 2.492 0 01-2.434-1.926L-.672 1.573a2.487 2.487 0 01.309-1.89A2.486 2.486 0 011.19-1.432c.186-.044.378-.067.572-.067h31.363a2.503 2.503 0 012.378 3.272L30.65 16.77a2.494 2.494 0 01-2.378 1.73z" fill="#818180" mask="url(#od)"/></g><path d="M37 42.25H18a.749.749 0 01-.729-.571l-6.859-27.93H3a.75.75 0 110-1.5h8a.75.75 0 01.73.573l6.858 27.928H37a.75.75 0 010 1.5" fill="#818180"/><g transform="translate(32 37)"><mask id="of" fill="#fff"><use xlink:href="#oe"/></mask><path d="M4.5 9a4.5 4.5 0 10-.001-9.001 4.5 4.5 0 000 9" fill="#FFF" mask="url(#of)"/></g><g transform="translate(32 37)"><mask id="oh" fill="#fff"><use xlink:href="#og"/></mask><path d="M4.5 1.5c-1.655 0-3 1.346-3 3s1.345 3 3 3c1.654 0 3-1.346 3-3s-1.346-3-3-3m0 9c-3.31 0-6-2.691-6-6 0-3.31 2.69-6 6-6 3.309 0 6 2.69 6 6 0 3.309-2.691 6-6 6" fill="#818181" mask="url(#oh)"/></g><g transform="translate(14 37)"><mask id="oj" fill="#fff"><use xlink:href="#oi"/></mask><path d="M4.5 9a4.5 4.5 0 100-9.001 4.5 4.5 0 000 9" fill="#FFF" mask="url(#oj)"/></g><g transform="translate(14 37)"><mask id="ol" fill="#fff"><use xlink:href="#ok"/></mask><path d="M4.5 1.5c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3m0 9c-3.309 0-6-2.691-6-6 0-3.31 2.691-6 6-6s6 2.69 6 6c0 3.309-2.691 6-6 6" fill="#818180" mask="url(#ol)"/></g><g transform="translate(16 3)"><mask id="on" fill="#fff"><use xlink:href="#om"/></mask><path d="M12.378 21.642a.999.999 0 01-1.414 0L.357 11.036a1.002 1.002 0 010-1.415l3.536-3.536a1 1 0 011.414 0l6.364 6.365L23.691.43a1.001 1.001 0 011.416 0l3.535 3.534a1 1 0 010 1.414L12.378 21.642z" fill="#FFF" mask="url(#on)"/></g><g transform="translate(16 3)"><mask id="op" fill="#fff"><use xlink:href="#oo"/></mask><path d="M1.772 10.329l9.899 9.899L27.228 4.672l-2.829-2.83-12.728 12.73L4.601 7.5l-2.829 2.829zm9.899 13.106a2.48 2.48 0 01-1.767-.732L-.703 12.097a2.503 2.503 0 010-3.536l3.536-3.535a2.502 2.502 0 013.535-.002l5.303 5.305 10.96-10.96c.945-.945 2.594-.943 3.537 0l3.535 3.535c.472.472.732 1.1.732 1.768 0 .668-.261 1.296-.733 1.768L13.439 22.703a2.48 2.48 0 01-1.768.732z" fill="#FF7000" mask="url(#op)"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_oci_sachnummern" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M13.44 2.496L5.76 8.832v36.48h15.36V8.832z"/><path d="M21.12 46.08H5.76c-.384 0-.576-.384-.576-.768V8.832c0-.192 0-.384.192-.576l7.68-6.336c.192-.192.576-.192.96 0l7.68 6.336c.192.192.192.384.192.576v36.48c0 .384-.384.768-.768.768zM6.528 44.544h14.016V9.216l-7.104-5.76-6.912 5.76v35.328z" fill="#818181" fill-rule="nonzero"/><g transform="translate(9.6 5.76)"><circle fill="#FFF" cx="3.84" cy="3.84" r="2.112"/><path d="M3.84 6.72C2.304 6.72.96 5.376.96 3.84.96 2.304 2.304.96 3.84.96c1.536 0 2.88 1.344 2.88 2.88 0 1.536-1.344 2.88-2.88 2.88zm0-4.224c-.768 0-1.344.576-1.344 1.344 0 .768.576 1.344 1.344 1.344.768 0 1.344-.576 1.344-1.344.192-.768-.576-1.344-1.344-1.344z" fill="#818181" fill-rule="nonzero"/></g><g transform="translate(13.44 7.68)"><circle fill="#FFF" cx="14.784" cy="14.784" r="13.632"/><path d="M14.784 29.184C6.72 29.184.192 22.656.192 14.592S6.72 0 14.784 0s14.592 6.528 14.592 14.592-6.528 14.592-14.592 14.592zm0-27.264c-6.912 0-12.672 5.76-12.672 12.672 0 6.912 5.76 12.672 12.672 12.672 6.912 0 12.672-5.76 12.672-12.672 0-6.912-5.76-12.672-12.672-12.672z" fill="#FF7000" fill-rule="nonzero"/></g><g fill="#FF7000"><path d="M18.624 19.008H32.64v1.536H18.624zM24 24.576h14.016v1.536H24z"/></g><path d="M35.136 28.8c-.192-.384 0-.576.192-.768l2.688-2.688-2.688-2.496c-.384-.384-.384-.576 0-.96s.576-.192.96 0l3.072 3.072c.192.384.192.768 0 .96l-3.072 3.264c-.192.192-.384.384-.576.192-.192-.192-.384-.192-.576-.576zM20.928 23.616c-.192 0-.384 0-.576-.192L17.28 20.16c-.192-.192-.192-.576 0-.96l3.072-3.072c.384-.384.768-.384.96 0 .384.384.384.576 0 .96l-2.688 2.496 2.688 2.688c.192.192.384.576.192.768-.192.384-.384.576-.576.576z" fill="#FF7000"/><g fill="#818181"><path d="M11.904 42.816c-.384 0-.576-.192-.384-.576l.96-9.024c0-.192.192-.384.576-.384.192 0 .384.192.384.576l-.96 9.024c-.192.192-.384.384-.576.384zM14.592 42.816c-.384 0-.576-.192-.384-.576l1.152-9.024c0-.192.192-.384.576-.384.192 0 .384.192.384.576l-1.152 9.024c-.192.384-.384.384-.576.384z"/><path d="M16.896 36.48h-6.528a.413.413 0 01-.384-.384c0-.192.192-.384.384-.384h6.528c.192 0 .384.192.384.384a.413.413 0 01-.384.384zM16.896 39.744h-6.528a.413.413 0 01-.384-.384c0-.192.192-.384.384-.384h6.528c.192 0 .384.192.384.384a.413.413 0 01-.384.384z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_offer_list" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h24v-6c0-.552.448-1.001 1-1.001h6V1a1 1 0 00-1-1H1z" id="qa"/><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h24v-6c0-.552.448-1.001 1-1.001h6V1a1 1 0 00-1-1H1z" id="qc"/><path id="qe" d="M0 13h4l1-.5 7.5 7 5 2 3-.5 1-1.5 2-.5 1.5-1 2-1 .5-1.501L30 14l.5 1.499L35 15V1.999h-4.5L26 3v1.5l-6.5-2.501h-3L14.5 3h-7L7 1.5 5.5.5 0 0z"/><path d="M8.23 2.906c-1.051 1.03-2.478 3.115-2.11 4.645.159.651.626 1.134 1.32 1.358 1.74.563 3.329.023 4.512-1.516.488-.074.754-.183 1.153-.359.145-.062.314-.137.538-.226.88.809 2.065 1.751 3.314 2.741 2.258 1.791 4.819 3.823 5.396 4.997.283.581-.022.959-.23 1.132-.304.256-.721.337-.947.182a.777.777 0 00-.828-.026.743.743 0 00-.37.727c.051.48-.396.754-.59.849-.49.244-1.004.201-1.196.026a.787.787 0 00-.797-.153.754.754 0 00-.492.634c-.046.495-.42.97-.906 1.155-.235.087-.576.14-.882-.135a.785.785 0 00-.702-.174.76.76 0 00-.539.474c-.029.076-.095.256-.815.256-.511 0-1.431-.339-1.881-.631-.54-.348-3.921-2.822-6.841-5.22-.41-.339-1.12-1.066-1.746-1.708-.557-.57-1.065-1.087-1.326-1.304a.777.777 0 00-1.084.089.746.746 0 00.091 1.063c.238.197.699.674 1.207 1.195.686.702 1.394 1.428 1.87 1.819 2.861 2.35 6.299 4.886 6.984 5.327.565.365 1.783.877 2.726.877.758 0 1.341-.17 1.744-.503a2.433 2.433 0 001.747-.019 3.003 3.003 0 001.6-1.447c.604.126 1.298.037 1.927-.274.616-.303 1.062-.769 1.282-1.313.611.032 1.241-.181 1.763-.619.882-.741 1.124-1.891.614-2.929-.724-1.479-3.312-3.533-5.813-5.517-1.395-1.106-2.713-2.152-3.553-2.977a.78.78 0 00-.804-.175c-.517.183-.837.325-1.089.435-.383.169-.512.225-1.03.278a.765.765 0 00-.562.329c-1.086 1.592-2.211 1.456-2.963 1.21-.239-.079-.281-.18-.305-.276-.162-.661.648-2.201 1.697-3.231C11.81 1.523 13.097.91 15.817 2.101c3.084 1.353 6.176 2.412 6.206 2.423a.771.771 0 00.979-.464.752.752 0 00-.473-.96c-.031-.011-3.061-1.048-6.084-2.376C15.323.232 14.361 0 13.483 0c-1.876 0-3.372 1.06-5.253 2.906z" id="qg"/><path d="M.727-.001A.74.74 0 000 .75c0 .414.326.75.727.75h6.545A.74.74 0 008 .75a.74.74 0 00-.728-.751H.727z" id="qi"/><path d="M2.734.13L.359 1.616c-.372.233-.472.704-.22 1.05a.852.852 0 001.126.205L3.64 1.385C4.013 1.152 3.25 1.347 3 1c-.22-.301.023-.915-.154-.915-.027 0-.063.014-.112.045z" id="qk"/><path d="M.263.4a.75.75 0 00.014 1.061c.4.389 3.921 3.812 4.733 4.407a.756.756 0 001.049-.162.75.75 0 00-.161-1.048C5.347 4.254 2.861 1.88 1.323.386A.75.75 0 00.799.173.744.744 0 00.263.4z" id="qm"/><path d="M.871.275a.715.715 0 00-.008 1.011c.026.026 2.688 2.706 3.776 3.516a.718.718 0 001-.146.716.716 0 00-.146-1C4.614 3.002 2.386.794 1.882.283A.718.718 0 00.871.275z" id="qo"/><path d="M.819.71a.715.715 0 00.019 1.01c.617.596 2.72 2.602 3.817 3.433a.714.714 0 001.001-.137.715.715 0 00-.138-1.001C4.456 3.211 2.258 1.104 1.829.691a.712.712 0 00-.496-.2.706.706 0 00-.514.219z" id="qq"/><path d="M.236.203A.747.747 0 000 .749v13.5c0 .414.336.751.75.751h4.5a.746.746 0 00.712-.517c.11-.337 2.695-8.269 3.035-12.168a.75.75 0 00-.231-.61C7.481.488 2.34.092.795.001L.755 0a.745.745 0 00-.519.203zM1.5 1.553c2.411.191 5.012.605 5.956 1.064C7.059 5.902 5.26 11.739 4.702 13.5H1.5V1.553z" id="qs"/><path d="M.452 1.57a.758.758 0 00-.419.467.721.721 0 00.085.609c.974 1.493 4.023 9.782 4.609 11.803a.782.782 0 00.759.551h4.726c.435 0 .788-.336.788-.75V.75c0-.416-.353-.75-.788-.75C4.028 0 .596 1.508.452 1.57zm1.441 1.079c1.201-.389 3.783-1.056 7.532-1.14V13.5h-3.35c-.747-2.315-2.952-8.354-4.182-10.851z" id="qu"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(5 3)"><mask id="qb" fill="#fff"><use xlink:href="#qa"/></mask><path d="M31 0a1 1 0 011 1v30h-6a1 1 0 00-1 1v6H1a1 1 0 01-1-1V1a1 1 0 011-1h30z" fill="#FFF" mask="url(#qb)"/></g><g transform="translate(5 3)"><mask id="qd" fill="#fff"><use xlink:href="#qc"/></mask><path d="M1.5 36.5h22V32c0-1.38 1.121-2.5 2.5-2.5h4.5v-28h-29v35zm25 3H1A2.503 2.503 0 01-1.5 37V1C-1.5-.378-.378-1.5 1-1.5h30c1.379 0 2.5 1.122 2.5 2.5v31.5h-7v7z" fill="#818181" mask="url(#qd)"/></g><g fill="#818181"><path d="M32 10.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 10.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5M32 15.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 15.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5M32 20.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 20.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5"/></g><g transform="translate(9 23)"><mask id="qf" fill="#fff"><use xlink:href="#qe"/></mask><path fill="#FFF" mask="url(#qf)" d="M-5 26.5h45V-5H-5z"/></g><g transform="translate(13 24)"><mask id="qh" fill="#fff"><use xlink:href="#qg"/></mask><path fill="#FF7000" mask="url(#qh)" d="M-5 26h34V-5H-5z"/></g><g transform="translate(16 25)"><mask id="qj" fill="#fff"><use xlink:href="#qi"/></mask><path fill="#FF7000" mask="url(#qj)" d="M-5 6.5h18V-5H-5z"/></g><g transform="translate(36 36)"><mask id="ql" fill="#fff"><use xlink:href="#qk"/></mask><path fill="#FF7000" mask="url(#ql)" d="M-5 8H8.741V-4.915H-5z"/></g><g transform="translate(28 35)"><mask id="qn" fill="#fff"><use xlink:href="#qm"/></mask><path fill="#FF7000" mask="url(#qn)" d="M-5.147-4.623l15.99-.56.558 15.992-15.99.558z"/></g><g transform="translate(26 38)"><mask id="qp" fill="#fff"><use xlink:href="#qo"/></mask><path fill="#FF7000" mask="url(#qp)" d="M-4.538-4.727l14.99-.523.525 14.99-14.992.523z"/></g><g transform="translate(23 39)"><mask id="qr" fill="#fff"><use xlink:href="#qq"/></mask><path fill="#FF7000" mask="url(#qr)" d="M-4.672-4.202l14.98-.785.785 14.979-14.98.785z"/></g><g transform="translate(8 22)"><mask id="qt" fill="#fff"><use xlink:href="#qs"/></mask><path fill="#FF7000" mask="url(#qt)" d="M-5 20h19V-5H-5z"/></g><g transform="translate(34 24)"><mask id="qv" fill="#fff"><use xlink:href="#qu"/></mask><path fill="#FF7000" mask="url(#qv)" d="M-5 20h21V-5H-5z"/></g></g></symbol>
+		<symbol viewBox="0 0 48 48" id="icon_printed_offer_list" xmlns="http://www.w3.org/2000/svg"><defs><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1" id="ra"/><path d="M1 0a1 1 0 00-1 1v36a1 1 0 001 1h30a1 1 0 001-1V1a1 1 0 00-1-1H1z" id="rc"/><path d="M3.3 0C1.485 0 .017 1.463.017 3.25L0 22.749c0 1.789 1.485 3.25 3.3 3.25h26.401c1.814 0 3.299-1.461 3.299-3.25V6.5c0-1.788-1.485-3.25-3.299-3.25H16.5L13.2 0H3.3z" id="re"/><path d="M3.3 0C1.485 0 .017 1.463.017 3.25L0 22.749c0 1.789 1.485 3.25 3.3 3.25h26.401c1.814 0 3.299-1.461 3.299-3.25V6.5c0-1.788-1.485-3.25-3.299-3.25H16.5L13.2 0H3.3z" id="rg"/><path d="M5.778.722v6.262L4.412 5.627a.715.715 0 00-1.017 0 .717.717 0 000 1.017l2.592 2.593a.718.718 0 001.019 0l2.593-2.593a.719.719 0 000-1.017.718.718 0 00-1.019 0L7.221 6.984V.722A.724.724 0 006.5-.001a.725.725 0 00-.722.723zm5.778 6.501v3.61a.724.724 0 01-.723.722H2.167a.725.725 0 01-.723-.722v-3.61A.724.724 0 00.722 6.5.724.724 0 000 7.223v4.332C0 12.35.65 13 1.444 13h10.112C12.35 13 13 12.35 13 11.555V7.223a.725.725 0 00-.723-.723.724.724 0 00-.721.723z" id="ri"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(5 3)"><mask id="rb" fill="#fff"><use xlink:href="#ra"/></mask><path d="M1 0h30a1 1 0 011 1v36a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1" fill="#FFF" mask="url(#rb)"/><mask id="rd" fill="#fff"><use xlink:href="#rc"/></mask><path d="M1.5 36.5h29v-35h-29v35zm29.5 3H1A2.503 2.503 0 01-1.5 37V1C-1.5-.378-.378-1.5 1-1.5h30c1.379 0 2.5 1.122 2.5 2.5v36c0 1.379-1.121 2.5-2.5 2.5z" fill="#818181" mask="url(#rd)"/></g><g fill="#818181"><path d="M32 10.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 10.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5M32 15.25H15a.75.75 0 010-1.5h17a.75.75 0 010 1.5M12 15.25h-2a.75.75 0 010-1.5h2a.75.75 0 010 1.5"/></g><g transform="translate(10 19)"><mask id="rf" fill="#fff"><use xlink:href="#re"/></mask><path d="M13.2 0H3.3C1.485 0 .017 1.462.017 3.25L0 22.75C0 24.538 1.485 26 3.3 26h26.4c1.815 0 3.3-1.462 3.3-3.25V6.5c0-1.788-1.485-3.25-3.3-3.25H16.5L13.2 0z" fill="#FFF" mask="url(#rf)"/></g><g transform="translate(10 19)"><mask id="rh" fill="#fff"><use xlink:href="#rg"/></mask><path d="M3.3 1.5c-.983 0-1.783.785-1.783 1.75L1.5 22.75c0 .964.808 1.75 1.8 1.75h26.4c.993 0 1.8-.786 1.8-1.75V6.5c0-.965-.807-1.75-1.8-1.75H15.886L12.585 1.5H3.3zm26.4 26H3.3c-2.646 0-4.8-2.13-4.8-4.75l.017-19.5C-1.483.63.662-1.5 3.3-1.5h10.515l3.299 3.25H29.7c2.647 0 4.8 2.131 4.8 4.75v16.25c0 2.62-2.153 4.75-4.8 4.75z" fill="#FF7000" mask="url(#rh)"/></g><g transform="translate(20 27)"><mask id="rj" fill="#fff"><use xlink:href="#ri"/></mask><path fill="#FF7000" mask="url(#rj)" d="M-5 18h23V-5H-5z"/></g></g></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+		
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode" target="_blank">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="icon_myeshop_artikellisten">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_artikellisten -->
+						<svg class="svg-icon_myeshop_artikellisten-dims">
+							<use xlink:href="#icon_myeshop_artikellisten"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_artikellisten</h2>
+				</li>
+				<li title="icon_myeshop_benutzer">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_benutzer -->
+						<svg class="svg-icon_myeshop_benutzer-dims">
+							<use xlink:href="#icon_myeshop_benutzer"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_benutzer</h2>
+				</li>
+				<li title="icon_myeshop_bestellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_bestellungen -->
+						<svg class="svg-icon_myeshop_bestellungen-dims">
+							<use xlink:href="#icon_myeshop_bestellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_bestellungen</h2>
+				</li>
+				<li title="icon_myeshop_faq">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_faq -->
+						<svg class="svg-icon_myeshop_faq-dims">
+							<use xlink:href="#icon_myeshop_faq"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_faq</h2>
+				</li>
+				<li title="icon_myeshop_kostenstelle">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_kostenstelle -->
+						<svg class="svg-icon_myeshop_kostenstelle-dims">
+							<use xlink:href="#icon_myeshop_kostenstelle"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_kostenstelle</h2>
+				</li>
+				<li title="icon_myeshop_lieferadressen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_lieferadressen -->
+						<svg class="svg-icon_myeshop_lieferadressen-dims">
+							<use xlink:href="#icon_myeshop_lieferadressen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_lieferadressen</h2>
+				</li>
+				<li title="icon_myeshop_newsletter">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_newsletter -->
+						<svg class="svg-icon_myeshop_newsletter-dims">
+							<use xlink:href="#icon_myeshop_newsletter"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_newsletter</h2>
+				</li>
+				<li title="icon_myeshop_produktfilter">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_produktfilter -->
+						<svg class="svg-icon_myeshop_produktfilter-dims">
+							<use xlink:href="#icon_myeshop_produktfilter"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_produktfilter</h2>
+				</li>
+				<li title="icon_myeshop_profil">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_profil -->
+						<svg class="svg-icon_myeshop_profil-dims">
+							<use xlink:href="#icon_myeshop_profil"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_profil</h2>
+				</li>
+				<li title="icon_myeshop_sachnummern">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_sachnummern -->
+						<svg class="svg-icon_myeshop_sachnummern-dims">
+							<use xlink:href="#icon_myeshop_sachnummern"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_sachnummern</h2>
+				</li>
+				<li title="icon_myeshop_sammelbestellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_sammelbestellungen -->
+						<svg class="svg-icon_myeshop_sammelbestellungen-dims">
+							<use xlink:href="#icon_myeshop_sammelbestellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_sammelbestellungen</h2>
+				</li>
+				<li title="icon_myeshop_schnellerfassung">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_schnellerfassung -->
+						<svg class="svg-icon_myeshop_schnellerfassung-dims">
+							<use xlink:href="#icon_myeshop_schnellerfassung"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_schnellerfassung</h2>
+				</li>
+				<li title="icon_myeshop_statistik">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_statistik -->
+						<svg class="svg-icon_myeshop_statistik-dims">
+							<use xlink:href="#icon_myeshop_statistik"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_statistik</h2>
+				</li>
+				<li title="icon_myeshop_unternehmenseinstellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_unternehmenseinstellungen -->
+						<svg class="svg-icon_myeshop_unternehmenseinstellungen-dims">
+							<use xlink:href="#icon_myeshop_unternehmenseinstellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_unternehmenseinstellungen</h2>
+				</li>
+				<li title="icon_myeshop_zugenehmigen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_zugenehmigen -->
+						<svg class="svg-icon_myeshop_zugenehmigen-dims">
+							<use xlink:href="#icon_myeshop_zugenehmigen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_zugenehmigen</h2>
+				</li>
+				<li title="icon_oci_sachnummern">
+					<div class="icon-box">
+						
+						<!-- icon_oci_sachnummern -->
+						<svg class="svg-icon_oci_sachnummern-dims">
+							<use xlink:href="#icon_oci_sachnummern"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_oci_sachnummern</h2>
+				</li>
+				<li title="icon_offer_list">
+					<div class="icon-box">
+						
+						<!-- icon_offer_list -->
+						<svg class="svg-icon_offer_list-dims">
+							<use xlink:href="#icon_offer_list"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_offer_list</h2>
+				</li>
+				<li title="icon_printed_offer_list">
+					<div class="icon-box">
+						
+						<!-- icon_printed_offer_list -->
+						<svg class="svg-icon_printed_offer_list-dims">
+							<use xlink:href="#icon_printed_offer_list"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_printed_offer_list</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<ul>
+				
+				<li title="icon_myeshop_artikellisten">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_artikellisten -->
+						<svg class="svg-icon_myeshop_artikellisten-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_artikellisten"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_artikellisten</h2>
+				</li>
+				<li title="icon_myeshop_benutzer">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_benutzer -->
+						<svg class="svg-icon_myeshop_benutzer-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_benutzer"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_benutzer</h2>
+				</li>
+				<li title="icon_myeshop_bestellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_bestellungen -->
+						<svg class="svg-icon_myeshop_bestellungen-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_bestellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_bestellungen</h2>
+				</li>
+				<li title="icon_myeshop_faq">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_faq -->
+						<svg class="svg-icon_myeshop_faq-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_faq"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_faq</h2>
+				</li>
+				<li title="icon_myeshop_kostenstelle">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_kostenstelle -->
+						<svg class="svg-icon_myeshop_kostenstelle-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_kostenstelle"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_kostenstelle</h2>
+				</li>
+				<li title="icon_myeshop_lieferadressen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_lieferadressen -->
+						<svg class="svg-icon_myeshop_lieferadressen-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_lieferadressen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_lieferadressen</h2>
+				</li>
+				<li title="icon_myeshop_newsletter">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_newsletter -->
+						<svg class="svg-icon_myeshop_newsletter-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_newsletter"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_newsletter</h2>
+				</li>
+				<li title="icon_myeshop_produktfilter">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_produktfilter -->
+						<svg class="svg-icon_myeshop_produktfilter-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_produktfilter"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_produktfilter</h2>
+				</li>
+				<li title="icon_myeshop_profil">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_profil -->
+						<svg class="svg-icon_myeshop_profil-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_profil"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_profil</h2>
+				</li>
+				<li title="icon_myeshop_sachnummern">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_sachnummern -->
+						<svg class="svg-icon_myeshop_sachnummern-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_sachnummern"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_sachnummern</h2>
+				</li>
+				<li title="icon_myeshop_sammelbestellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_sammelbestellungen -->
+						<svg class="svg-icon_myeshop_sammelbestellungen-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_sammelbestellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_sammelbestellungen</h2>
+				</li>
+				<li title="icon_myeshop_schnellerfassung">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_schnellerfassung -->
+						<svg class="svg-icon_myeshop_schnellerfassung-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_schnellerfassung"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_schnellerfassung</h2>
+				</li>
+				<li title="icon_myeshop_statistik">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_statistik -->
+						<svg class="svg-icon_myeshop_statistik-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_statistik"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_statistik</h2>
+				</li>
+				<li title="icon_myeshop_unternehmenseinstellungen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_unternehmenseinstellungen -->
+						<svg class="svg-icon_myeshop_unternehmenseinstellungen-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_unternehmenseinstellungen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_unternehmenseinstellungen</h2>
+				</li>
+				<li title="icon_myeshop_zugenehmigen">
+					<div class="icon-box">
+						
+						<!-- icon_myeshop_zugenehmigen -->
+						<svg class="svg-icon_myeshop_zugenehmigen-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_myeshop_zugenehmigen"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_myeshop_zugenehmigen</h2>
+				</li>
+				<li title="icon_oci_sachnummern">
+					<div class="icon-box">
+						
+						<!-- icon_oci_sachnummern -->
+						<svg class="svg-icon_oci_sachnummern-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_oci_sachnummern"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_oci_sachnummern</h2>
+				</li>
+				<li title="icon_offer_list">
+					<div class="icon-box">
+						
+						<!-- icon_offer_list -->
+						<svg class="svg-icon_offer_list-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_offer_list"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_offer_list</h2>
+				</li>
+				<li title="icon_printed_offer_list">
+					<div class="icon-box">
+						
+						<!-- icon_printed_offer_list -->
+						<svg class="svg-icon_printed_offer_list-dims">
+							<use xlink:href="myeshop-icon-stack.svg#icon_printed_offer_list"></use>
+						</svg>
+						
+					</div>
+					<h2>icon_printed_offer_list</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Wed, 07 Oct 2020 14:58:34 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
